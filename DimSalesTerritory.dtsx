@@ -1,0 +1,1280 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/15/2023 10:04:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AL-KAHTE"
+  DTS:CreatorName="AL-KAHTE\mkalk"
+  DTS:DTSID="{48F674FF-2EBE-45FB-9E5E-BFE7C61204AD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DimSalesTerritory"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{E8F7FC2E-521B-407E-AC13-4A8B8E4B693D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}"
+      DTS:ObjectName="DESTINATION.AWDW-G1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}DESTINATION.AWDW-G1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SOURCE.AWDB-G1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1D017D25-02B9-4F2C-A653-9D42FBC9570F}"
+      DTS:ObjectName="SOURCE.AWDB-G1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{1D017D25-02B9-4F2C-A653-9D42FBC9570F}SOURCE.AWDB-G1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51D788DB-27AD-43E5-95EA-4A8BC4A68109}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DBTSValue">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B37B0CFF-455A-45AD-A160-A602234A1D38}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastRowValue">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Add New SalesTerritory"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EF0B3D9F-C617-441E-A689-2FC70068D033}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Add New SalesTerritory"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Add New SalesTerritory\Add new Currency"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Add new Currency"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimSalesTerritory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add New SalesTerritory\Add new Currency.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].Columns[SalesTerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="SalesTerritoryID"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryID]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryID]" />
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].Columns[SalesTerritoryRegion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SalesTerritoryRegion"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryRegion]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryRegion]" />
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].Columns[SalesTerritoryCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SalesTerritoryCountry"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryCountry]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryCountry]" />
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].Columns[SalesTerritoryGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SalesTerritoryGroup"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryGroup]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryGroup]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
+                      dataType="i4"
+                      name="SalesTerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryID]"
+                      dataType="i4"
+                      name="SalesTerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryRegion]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryCountry]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryGroup]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryGroup" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add New SalesTerritory\Add new Currency.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Add new Currency.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Add new Currency.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Add new Currency.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add New SalesTerritory\Get row changes"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Get row changes"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE  [dbo].[GetSalesTerritoryChangesByRowVersion]  ?,?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"@startRow:Input",{B37B0CFF-455A-45AD-A160-A602234A1D38};"@endRow:Input",{51D788DB-27AD-43E5-95EA-4A8BC4A68109};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add New SalesTerritory\Get row changes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SOURCE.AWDB-G1]"
+                  connectionManagerRefId="Package.ConnectionManagers[SOURCE.AWDB-G1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryID]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryID]"
+                      name="SalesTerritoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryRegion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryRegion]"
+                      length="50"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryRegion]"
+                      name="SalesTerritoryRegion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryCountry]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryCountry]"
+                      length="50"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryCountry]"
+                      name="SalesTerritoryCountry"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryGroup]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryGroup]"
+                      length="50"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryGroup]"
+                      name="SalesTerritoryGroup"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryID]"
+                      dataType="i4"
+                      name="SalesTerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryRegion]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryCountry]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryGroup]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryGroup" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryID]"
+                      name="SalesTerritoryID" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryRegion]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryRegion]"
+                      name="SalesTerritoryRegion" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryCountry]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryCountry]"
+                      name="SalesTerritoryCountry" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryGroup]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryGroup]"
+                      name="SalesTerritoryGroup" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add New SalesTerritory\Load the staging area"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load the staging area"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Staging].[SalesTerritory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add New SalesTerritory\Load the staging area.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].Columns[SalesTerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="SalesTerritoryID"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryID]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryID]" />
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].Columns[SalesTerritoryRegion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SalesTerritoryRegion"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryRegion]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryRegion]" />
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].Columns[SalesTerritoryCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SalesTerritoryCountry"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryCountry]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryCountry]" />
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].Columns[SalesTerritoryGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SalesTerritoryGroup"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryGroup]"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryGroup]" />
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].Columns[SalesTerritoryKey]"
+                      cachedDataType="i4"
+                      cachedName="SalesTerritoryKey"
+                      externalMetadataColumnId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
+                      lineageId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Match Output].Columns[SalesTerritoryKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
+                      dataType="i4"
+                      name="SalesTerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryID]"
+                      dataType="i4"
+                      name="SalesTerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryRegion]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryCountry]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryGroup]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryGroup" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add New SalesTerritory\Load the staging area.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add New SalesTerritory\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimSalesTerritory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimSalesTerritory]) [refTable]
+where [refTable].[SalesTerritoryID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SalesTerritoryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryRegion" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryCountry" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryGroup" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add New SalesTerritory\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add New SalesTerritory\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add New SalesTerritory\Lookup.Inputs[Lookup Input].Columns[SalesTerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="SalesTerritoryID"
+                      lineageId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SalesTerritoryID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Add New SalesTerritory\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Match Output].Columns[SalesTerritoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Match Output].Columns[SalesTerritoryKey]"
+                      name="SalesTerritoryKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">SalesTerritoryKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Add New SalesTerritory\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Add New SalesTerritory\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Add New SalesTerritory.Paths[Lookup Match Output]"
+              endId="Package\Add New SalesTerritory\Load the staging area.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Add New SalesTerritory.Paths[Lookup No Match Output]"
+              endId="Package\Add New SalesTerritory\Add new Currency.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Add New SalesTerritory\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Add New SalesTerritory.Paths[OLE DB Source Output]"
+              endId="Package\Add New SalesTerritory\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Add New SalesTerritory\Get row changes.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clean the staging area"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4042B8BB-FAC7-4FCE-8E3F-F709225BC4F8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean the staging area"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}"
+          SQLTask:SqlStatementSource="Truncate Table [Staging].[SalesTerritory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get DataBase Row Version"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FBDE61AB-C20F-4C9A-9776-50A0A1F8FD14}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get DataBase Row Version"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1D017D25-02B9-4F2C-A653-9D42FBC9570F}"
+          SQLTask:SqlStatementSource="EXECUTE  [dbo].[GetDatabaseRowVersion] "
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DBTS"
+            SQLTask:DtsVariableName="User::DBTSValue" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get SalesTerritory Row Version"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F02EB77E-1F07-44F3-9EBD-7E7323C4B380}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get SalesTerritory Row Version"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName= 'SalesTerritory'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LastRowVersion"
+            SQLTask:DtsVariableName="User::LastRowValue" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sync SalesTerritory data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FF1D31FF-FE06-4317-9205-BD811F9961CE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sync SalesTerritory data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}"
+          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimSalesTerritory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update SalesTerritory Row Version"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8C39F879-7442-4DC1-882A-12BC5E8C2BEC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update SalesTerritory Row Version"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}"
+          SQLTask:SqlStatementSource="Execute [dbo].[UpdateLastPackageRowVersion] @tableName='SalesTerritory', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::DBTSValue"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{046F6347-C71B-497E-A734-36DE4C279B4B}"
+      DTS:From="Package\Get DataBase Row Version"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get SalesTerritory Row Version" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DE23C6FA-80D0-4CAB-A4B4-018F143DAEDF}"
+      DTS:From="Package\Get SalesTerritory Row Version"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Clean the staging area" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9C8453DC-2EE8-4D6E-B02B-EB27461C94B8}"
+      DTS:From="Package\Clean the staging area"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Add New SalesTerritory" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{36E12AFD-7DB2-4CB7-A7F3-81BBDAEC62FB}"
+      DTS:From="Package\Add New SalesTerritory"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Sync SalesTerritory data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{73F4DA2D-16A0-4DC8-9DB1-3D3552543F73}"
+      DTS:From="Package\Sync SalesTerritory data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Update SalesTerritory Row Version" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Add New SalesTerritory"
+          TopLeft="405.357143720042,364.19117615136" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Clean the staging area"
+          TopLeft="205.535714723246,289.441176216881" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Get DataBase Row Version"
+          TopLeft="172.85714322511,108.588235198936" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Get SalesTerritory Row Version"
+          TopLeft="168.928571788175,193.470588065709" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Sync SalesTerritory data"
+          TopLeft="606.428572719499,429.573529035226" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Update SalesTerritory Row Version"
+          TopLeft="733.928572990913,535.499999572687" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="274.85714322511,150.588235198936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.571428563065,42.882352866773"
+              Start="0,0"
+              End="10.571428563065,35.382352866773">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4411764333865" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4411764333865"
+                    Point2="0,21.4411764333865"
+                    Point3="4,21.4411764333865" />
+                  <mssgle:LineSegment
+                    End="6.57142856306496,21.4411764333865" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.57142856306496,21.4411764333865"
+                    Point2="10.571428563065,21.4411764333865"
+                    Point3="10.571428563065,25.4411764333865" />
+                  <mssgle:LineSegment
+                    End="10.571428563065,35.382352866773" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="285.428571788175,235.470588065709">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.107142935071,53.970588151172"
+              Start="0,0"
+              End="12.107142935071,46.470588151172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.985294075586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.985294075586"
+                    Point2="0,26.985294075586"
+                    Point3="4,26.985294075586" />
+                  <mssgle:LineSegment
+                    End="8.10714293507101,26.985294075586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.10714293507101,26.985294075586"
+                    Point2="12.107142935071,26.985294075586"
+                    Point3="12.107142935071,30.985294075586" />
+                  <mssgle:LineSegment
+                    End="12.107142935071,46.470588151172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="297.535714723246,331.441176216881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="205.321428996796,32.749999934479"
+              Start="0,0"
+              End="205.321428996796,25.249999934479">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.3749999672395" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.3749999672395"
+                    Point2="0,16.3749999672395"
+                    Point3="4,16.3749999672395" />
+                  <mssgle:LineSegment
+                    End="201.321428996796,16.3749999672395" />
+                  <mssgle:CubicBezierSegment
+                    Point1="201.321428996796,16.3749999672395"
+                    Point2="205.321428996796,16.3749999672395"
+                    Point3="205.321428996796,20.3749999672395" />
+                  <mssgle:LineSegment
+                    End="205.321428996796,25.249999934479" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="502.857143720042,406.19117615136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.071428999457,23.382352883866"
+              Start="0,0"
+              End="209.071428999457,15.882352883866">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.69117644193298" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.69117644193298"
+                    Point2="0,11.691176441933"
+                    Point3="4,11.691176441933" />
+                  <mssgle:LineSegment
+                    End="205.071428999457,11.691176441933" />
+                  <mssgle:CubicBezierSegment
+                    Point1="205.071428999457,11.691176441933"
+                    Point2="209.071428999457,11.691176441933"
+                    Point3="209.071428999457,15.691176441933" />
+                  <mssgle:LineSegment
+                    End="209.071428999457,15.882352883866" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="711.928572719499,471.573529035226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.500000271414,63.926470537461"
+              Start="0,0"
+              End="138.500000271414,56.426470537461">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9632352687305" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.9632352687305"
+                    Point2="0,31.9632352687305"
+                    Point3="4,31.9632352687305" />
+                  <mssgle:LineSegment
+                    End="134.500000271414,31.9632352687305" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134.500000271414,31.9632352687305"
+                    Point2="138.500000271414,31.9632352687305"
+                    Point3="138.500000271414,35.9632352687305" />
+                  <mssgle:LineSegment
+                    End="138.500000271414,56.426470537461" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Add New SalesTerritory">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Add New SalesTerritory\Lookup"
+          TopLeft="577.999991387129,301.999995499849" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Add New SalesTerritory\Load the staging area"
+          TopLeft="431.999993562699,422.999993696809" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Add New SalesTerritory\Get row changes"
+          TopLeft="505.999992460012,185.999997228384" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Add New SalesTerritory\Add new Currency"
+          TopLeft="746.999988883734,422.999993398786" />
+        <EdgeLayout
+          Id="Package\Add New SalesTerritory.Paths[OLE DB Source Output]"
+          TopLeft="584.999992460012,227.999997228384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.999998927117,73.999998271465"
+              Start="0,0"
+              End="64.999998927117,66.499998271465">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.9999991357325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.9999991357325"
+                    Point2="0,36.9999991357325"
+                    Point3="4,36.9999991357325" />
+                  <mssgle:LineSegment
+                    End="60.999998927117,36.9999991357325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60.999998927117,36.9999991357325"
+                    Point2="64.999998927117,36.9999991357325"
+                    Point3="64.999998927117,40.9999991357325" />
+                  <mssgle:LineSegment
+                    End="64.999998927117,66.499998271465" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add New SalesTerritory.Paths[Lookup No Match Output]"
+          TopLeft="672.666658053796,343.999995499849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156.833330829938,78.999997898937"
+              Start="0,0"
+              End="156.833330829938,71.499997898937">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1208782666008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1208782666008"
+                    Point2="0,32.1208782666008"
+                    Point3="4,32.1208782666008" />
+                  <mssgle:LineSegment
+                    End="152.833330829938,32.1208782666008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="152.833330829938,32.1208782666008"
+                    Point2="156.833330829938,32.1208782666008"
+                    Point3="156.833330829938,36.1208782666008" />
+                  <mssgle:LineSegment
+                    End="156.833330829938,71.499997898937" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.6102786962192,37.1208782666008,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add New SalesTerritory.Paths[Lookup Match Output]"
+          TopLeft="627.333324720462,343.999995499849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.833331157763,78.99999819696"
+              Start="0,0"
+              End="-104.833331157763,71.49999819696">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.120878387775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.120878387775"
+                    Point2="0,32.120878387775"
+                    Point3="-4,32.120878387775" />
+                  <mssgle:LineSegment
+                    End="-100.833331157763,32.120878387775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.833331157763,32.120878387775"
+                    Point2="-104.833331157763,32.120878387775"
+                    Point3="-104.833331157763,36.120878387775" />
+                  <mssgle:LineSegment
+                    End="-104.833331157763,71.49999819696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-100.608052297632,37.120878387775,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add New SalesTerritory\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSalesTerritory]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add New SalesTerritory\Load the staging area">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add New SalesTerritory\Get row changes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add New SalesTerritory\Add new Currency">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
