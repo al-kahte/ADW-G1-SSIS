@@ -5,46 +5,46 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="AL-KAHTE"
   DTS:CreatorName="AL-KAHTE\mkalk"
-  DTS:DTSID="{D8E44AB0-C806-497E-AF6C-C564FC016C70}"
+  DTS:DTSID="{F74F9965-9EE9-4E30-ACB4-251D30E6B04A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5228.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="DimPromotion"
+  DTS:ObjectName="DimGeography"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{140AEBB3-FC9B-4C5C-A064-D28B93337E19}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{57EB13A4-83A8-4390-AD70-73C40A2CC1A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{2CC69F00-1C23-4AD9-8600-48FE086EA683}"
+      DTS:DTSID="{7A87DF68-B140-4475-A396-43E521C4B8A0}"
       DTS:ObjectName="DESTINATION.AWDW-G1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{2CC69F00-1C23-4AD9-8600-48FE086EA683}DESTINATION.AWDW-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{7A87DF68-B140-4475-A396-43E521C4B8A0}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SOURCE.AWDB-G1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{9059B0C5-A81C-4626-923C-37BE8CFAD1AB}"
+      DTS:DTSID="{BBD1B6D4-68E5-4ADA-9414-64991B58E9ED}"
       DTS:ObjectName="SOURCE.AWDB-G1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{9059B0C5-A81C-4626-923C-37BE8CFAD1AB}SOURCE.AWDB-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{BBD1B6D4-68E5-4ADA-9414-64991B58E9ED}SOURCE.AWDB-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{39AFCCBD-7BF5-452B-8469-EDA8C924C000}"
+      DTS:DTSID="{96824E04-EF81-4CF6-A53B-FDFC41932D2A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DBTSValue">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EA8E336F-CF56-4249-A034-718A05FB5FC9}"
+      DTS:DTSID="{871D9D01-C141-4A81-8D97-CAEF326EE83B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastRowValue">
@@ -63,13 +63,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Add New Promotion"
+      DTS:refId="Package\Add new Geography"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{E2E6031D-24E6-40D2-9607-6EEBC466CFFA}"
+      DTS:DTSID="{6869D730-D1CE-47AB-86B2-4EEF03F501C3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Add New Promotion"
+      DTS:ObjectName="Add new Geography"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -77,11 +77,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Add New Promotion\Add New Promotion"
+              refId="Package\Add new Geography\Add new Geography"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Add New Promotion"
+              name="Add new Geography"
               usesDispositions="true"
               version="4">
               <properties>
@@ -92,7 +92,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimPromotion]</property>
+                  name="OpenRowset">[dbo].[DimGeography]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -134,7 +134,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add New Promotion\Add New Promotion.Connections[OleDbConnection]"
+                  refId="Package\Add new Geography\Add new Geography.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
                   connectionManagerRefId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -142,136 +142,132 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input]"
+                  refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[PromotionID]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[GeographyID]"
                       cachedDataType="i4"
-                      cachedName="PromotionID"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]" />
+                      cachedName="GeographyID"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[PromotionName]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PromotionName"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionName]" />
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[DiscountPct]"
-                      cachedDataType="cy"
-                      cachedName="DiscountPct"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[DiscountPct]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[DiscountPct]" />
-                    <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[PromotionType]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[StateProvinceCode]"
                       cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="PromotionType"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionType]" />
+                      cachedLength="3"
+                      cachedName="StateProvinceCode"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceCode]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceCode]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[PromotionCategory]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[StateProvinceName]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="PromotionCategory"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionCategory]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionCategory]" />
+                      cachedName="StateProvinceName"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceName]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceName]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[StartDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="StartDate"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[StartDate]" />
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionCode]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[EndDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="EndDate"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[EndDate]" />
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[CountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CountryRegionName"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionName]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[MinQty]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[PostalCode]" />
+                    <inputColumn
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
                       cachedDataType="i4"
-                      cachedName="MinQty"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[MinQty]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MinQty]" />
-                    <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[MaxQty]"
-                      cachedDataType="i4"
-                      cachedName="MaxQty"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[MaxQty]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MaxQty]" />
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
                       dataType="i4"
-                      name="PromotionKey" />
+                      name="GeographyKey" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
                       dataType="i4"
-                      name="PromotionID" />
+                      name="GeographyID" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       dataType="wstr"
-                      length="255"
-                      name="PromotionName" />
+                      length="30"
+                      name="City" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[DiscountPct]"
-                      dataType="r8"
-                      name="DiscountPct" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceCode]"
                       dataType="wstr"
-                      length="50"
-                      name="PromotionType" />
+                      length="3"
+                      name="StateProvinceCode" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionCategory]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceName]"
                       dataType="wstr"
                       length="50"
-                      name="PromotionCategory" />
+                      name="StateProvinceName" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
-                      dataType="dbTimeStamp"
-                      name="StartDate" />
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
-                      dataType="dbTimeStamp"
-                      name="EndDate" />
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="CountryRegionName" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[MinQty]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
                       dataType="i4"
-                      name="MinQty" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[MaxQty]"
-                      dataType="i4"
-                      name="MaxQty" />
+                      name="SalesTerritoryKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Add New Promotion\Add New Promotion.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Add new Geography\Add new Geography.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Add new Geography\Add new Geography.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Add New Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Add new Geography\Add new Geography.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Add new Geography\Add new Geography.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Add New Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Add new Geography\Add new Geography.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -280,7 +276,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Add New Promotion\Get row changes"
+              refId="Package\Add new Geography\Get row changes"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -304,7 +300,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE  [dbo].[GetPromotionChangesByRowVersion]  ?,?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE  [dbo].[GetGeographyChangesByRowVersion]  ?,?</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -325,11 +321,11 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@startRow:Input",{EA8E336F-CF56-4249-A034-718A05FB5FC9};"@endRow:Input",{39AFCCBD-7BF5-452B-8469-EDA8C924C000};</property>
+                  name="ParameterMapping">"@startRow:Input",{871D9D01-C141-4A81-8D97-CAEF326EE83B};"@endRow:Input",{96824E04-EF81-4CF6-A53B-FDFC41932D2A};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add New Promotion\Get row changes.Connections[OleDbConnection]"
+                  refId="Package\Add new Geography\Get row changes.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[SOURCE.AWDB-G1]"
                   connectionManagerRefId="Package.ConnectionManagers[SOURCE.AWDB-G1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -337,205 +333,191 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output]"
+                  refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionID]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]"
-                      name="PromotionID"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[GeographyID]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]"
+                      name="GeographyID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionName]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[City]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionName]"
-                      length="255"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionName]"
-                      name="PromotionName"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="30"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[DiscountPct]"
-                      dataType="cy"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[DiscountPct]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[DiscountPct]"
-                      name="DiscountPct"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionType]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceCode]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionType]"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceCode]"
+                      length="3"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceCode]"
+                      name="StateProvinceCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceName]"
                       length="50"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionType]"
-                      name="PromotionType"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceName]"
+                      name="StateProvinceName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionCategory]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionCategory]"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionName]"
                       length="50"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionCategory]"
-                      name="PromotionCategory"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionName]"
+                      name="CountryRegionName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[StartDate]"
-                      dataType="dbTimeStamp"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[StartDate]"
-                      name="StartDate"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      length="15"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      name="PostalCode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[EndDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[EndDate]"
-                      name="EndDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MinQty]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[MinQty]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MinQty]"
-                      name="MinQty"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MaxQty]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[MaxQty]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MaxQty]"
-                      name="MaxQty"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
-                      dataType="bytes"
-                      length="8"
-                      name="rowversion" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionID]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[GeographyID]"
                       dataType="i4"
-                      name="PromotionID" />
+                      name="GeographyID" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionName]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       dataType="wstr"
-                      length="255"
-                      name="PromotionName" />
+                      length="30"
+                      name="City" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[DiscountPct]"
-                      dataType="cy"
-                      name="DiscountPct" />
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="StateProvinceCode" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionType]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceName]"
                       dataType="wstr"
                       length="50"
-                      name="PromotionType" />
+                      name="StateProvinceName" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionCategory]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionName]"
                       dataType="wstr"
                       length="50"
-                      name="PromotionCategory" />
+                      name="CountryRegionName" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
-                      dataType="dbTimeStamp"
-                      name="StartDate" />
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
-                      dataType="dbTimeStamp"
-                      name="EndDate" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[MinQty]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
                       dataType="i4"
-                      name="MinQty" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[MaxQty]"
-                      dataType="i4"
-                      name="MaxQty" />
+                      name="TerritoryID" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionID]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[GeographyID]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionID]"
-                      name="PromotionID" />
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[GeographyID]"
+                      name="GeographyID" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionName]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[City]"
                       dataType="wstr"
-                      length="255"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionName]"
-                      name="PromotionName" />
+                      length="30"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[DiscountPct]"
-                      dataType="cy"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[DiscountPct]"
-                      name="DiscountPct" />
-                    <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionType]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[StateProvinceCode]"
                       dataType="wstr"
-                      length="50"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionType]"
-                      name="PromotionType" />
+                      length="3"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[StateProvinceCode]"
+                      name="StateProvinceCode" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionCategory]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[StateProvinceName]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionCategory]"
-                      name="PromotionCategory" />
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[StateProvinceName]"
+                      name="StateProvinceName" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[StartDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[StartDate]"
-                      name="StartDate" />
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[EndDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[EndDate]"
-                      name="EndDate" />
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[CountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[CountryRegionName]"
+                      name="CountryRegionName" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[MinQty]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      name="PostalCode" />
+                    <outputColumn
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[MinQty]"
-                      name="MinQty" />
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[MaxQty]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[MaxQty]"
-                      name="MaxQty" />
-                    <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -544,7 +526,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Add New Promotion\Load the staging area"
+              refId="Package\Add new Geography\Load the staging area"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -559,7 +541,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Staging].[Promotion]</property>
+                  name="OpenRowset">[staging].[Geography]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -601,7 +583,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add New Promotion\Load the staging area.Connections[OleDbConnection]"
+                  refId="Package\Add new Geography\Load the staging area.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
                   connectionManagerRefId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -609,142 +591,138 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input]"
+                  refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionID]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[GeographyID]"
                       cachedDataType="i4"
-                      cachedName="PromotionID"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]" />
+                      cachedName="GeographyID"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionName]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PromotionName"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionName]" />
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[DiscountPct]"
-                      cachedDataType="cy"
-                      cachedName="DiscountPct"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[DiscountPct]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[DiscountPct]" />
-                    <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionType]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[StateProvinceCode]"
                       cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="PromotionType"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionType]" />
+                      cachedLength="3"
+                      cachedName="StateProvinceCode"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceCode]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceCode]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionCategory]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[StateProvinceName]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="PromotionCategory"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionCategory]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionCategory]" />
+                      cachedName="StateProvinceName"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceName]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceName]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[StartDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="StartDate"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[StartDate]" />
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionCode]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[EndDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="EndDate"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[EndDate]" />
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[CountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CountryRegionName"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionName]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[MinQty]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[PostalCode]" />
+                    <inputColumn
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[GeographyKey]"
                       cachedDataType="i4"
-                      cachedName="MinQty"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[MinQty]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MinQty]" />
+                      cachedName="GeographyKey"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
+                      lineageId="Package\Add new Geography\Lookup.Outputs[Lookup Match Output].Columns[GeographyKey]" />
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[MaxQty]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
                       cachedDataType="i4"
-                      cachedName="MaxQty"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[MaxQty]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MaxQty]" />
-                    <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionKey]"
-                      cachedDataType="i4"
-                      cachedName="PromotionKey"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
-                      lineageId="Package\Add New Promotion\Lookup.Outputs[Lookup Match Output].Columns[PromotionKey]" />
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
                       dataType="i4"
-                      name="PromotionKey" />
+                      name="GeographyKey" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
                       dataType="i4"
-                      name="PromotionID" />
+                      name="GeographyID" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       dataType="wstr"
-                      length="255"
-                      name="PromotionName" />
+                      length="30"
+                      name="City" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[DiscountPct]"
-                      dataType="r8"
-                      name="DiscountPct" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceCode]"
                       dataType="wstr"
-                      length="50"
-                      name="PromotionType" />
+                      length="3"
+                      name="StateProvinceCode" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionCategory]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceName]"
                       dataType="wstr"
                       length="50"
-                      name="PromotionCategory" />
+                      name="StateProvinceName" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
-                      dataType="dbTimeStamp"
-                      name="StartDate" />
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
-                      dataType="dbTimeStamp"
-                      name="EndDate" />
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="CountryRegionName" />
                     <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[MinQty]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
                       dataType="i4"
-                      name="MinQty" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[MaxQty]"
-                      dataType="i4"
-                      name="MaxQty" />
+                      name="SalesTerritoryKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Add New Promotion\Load the staging area.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Add new Geography\Load the staging area.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Add new Geography\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Add new Geography\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Add new Geography\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Add new Geography\Load the staging area.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -753,7 +731,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Add New Promotion\Lookup"
+              refId="Package\Add new Geography\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -766,14 +744,14 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimPromotion]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimGeography]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPromotion]) [refTable]
-where [refTable].[PromotionID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimGeography]) [refTable]
+where [refTable].[GeographyID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -804,12 +782,12 @@ where [refTable].[PromotionID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PromotionKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DiscountPct" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionCategory" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MinQty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaxQty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GeographyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostalCode" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]};</property>
+                  name="ParameterMap">#{Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -821,7 +799,7 @@ where [refTable].[PromotionID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add New Promotion\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Add new Geography\Lookup.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
                   connectionManagerRefId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
                   description="Connection manager used to access lookup data."
@@ -829,19 +807,19 @@ where [refTable].[PromotionID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Add New Promotion\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Add new Geography\Lookup.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add New Promotion\Lookup.Inputs[Lookup Input].Columns[PromotionID]"
+                      refId="Package\Add new Geography\Lookup.Inputs[Lookup Input].Columns[GeographyID]"
                       cachedDataType="i4"
-                      cachedName="PromotionID"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]">
+                      cachedName="GeographyID"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">PromotionID</property>
+                          name="JoinToReferenceColumn">GeographyID</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -854,54 +832,54 @@ where [refTable].[PromotionID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Add New Promotion\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Add new Geography\Lookup.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Add New Promotion\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Add new Geography\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Lookup.Outputs[Lookup Match Output].Columns[PromotionKey]"
+                      refId="Package\Add new Geography\Lookup.Outputs[Lookup Match Output].Columns[GeographyKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Add New Promotion\Lookup.Outputs[Lookup Match Output].Columns[PromotionKey]"
-                      name="PromotionKey"
+                      lineageId="Package\Add new Geography\Lookup.Outputs[Lookup Match Output].Columns[GeographyKey]"
+                      name="GeographyKey"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">PromotionKey</property>
+                          name="CopyFromReferenceColumn">GeographyKey</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Add New Promotion\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Add new Geography\Lookup.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Add New Promotion\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Add new Geography\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Add New Promotion\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Add new Geography\Lookup.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Add New Promotion\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Add new Geography\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Add new Geography\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Add new Geography\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add New Promotion\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Add new Geography\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Add new Geography\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -912,20 +890,20 @@ where [refTable].[PromotionID] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Add New Promotion.Paths[Lookup Match Output]"
-              endId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input]"
+              refId="Package\Add new Geography.Paths[Lookup Match Output]"
+              endId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
-              startId="Package\Add New Promotion\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Add new Geography\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Add New Promotion.Paths[Lookup No Match Output]"
-              endId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input]"
+              refId="Package\Add new Geography.Paths[Lookup No Match Output]"
+              endId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
-              startId="Package\Add New Promotion\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Add new Geography\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Add New Promotion.Paths[OLE DB Source Output]"
-              endId="Package\Add New Promotion\Lookup.Inputs[Lookup Input]"
+              refId="Package\Add new Geography.Paths[OLE DB Source Output]"
+              endId="Package\Add new Geography\Lookup.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output]" />
+              startId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -934,7 +912,7 @@ where [refTable].[PromotionID] = ?</property>
       DTS:refId="Package\Clean the staging area"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{AE47E95A-B75C-45E9-8001-D57AE41EF6F5}"
+      DTS:DTSID="{87969B82-DDD7-4BD3-B560-240E9A2B3F56}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Clean the staging area"
@@ -943,15 +921,15 @@ where [refTable].[PromotionID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2CC69F00-1C23-4AD9-8600-48FE086EA683}"
-          SQLTask:SqlStatementSource="Truncate Table [Staging].[Promotion]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{7A87DF68-B140-4475-A396-43E521C4B8A0}"
+          SQLTask:SqlStatementSource="Truncate Table [Staging].[Geography]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Get DataBase Row Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6F0C1405-CA31-4BE6-B451-2D19C4873A64}"
+      DTS:DTSID="{FB56C901-7D3D-4A69-B005-4A14DBAA2543}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get DataBase Row Version"
@@ -960,7 +938,7 @@ where [refTable].[PromotionID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9059B0C5-A81C-4626-923C-37BE8CFAD1AB}"
+          SQLTask:Connection="{BBD1B6D4-68E5-4ADA-9414-64991B58E9ED}"
           SQLTask:SqlStatementSource="EXECUTE  [dbo].[GetDatabaseRowVersion] "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -970,20 +948,20 @@ where [refTable].[PromotionID] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get Promotion Row Version"
+      DTS:refId="Package\Get Geography Row Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{55E3323C-F6B2-45F1-8757-03EB5C42CD3F}"
+      DTS:DTSID="{2F421E25-FAD2-4A8A-A72C-C285C41AF5AE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get Promotion Row Version"
+      DTS:ObjectName="Get Geography Row Version"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2CC69F00-1C23-4AD9-8600-48FE086EA683}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName= 'Promotion'"
+          SQLTask:Connection="{7A87DF68-B140-4475-A396-43E521C4B8A0}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName= 'Geography'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LastRowVersion"
@@ -992,37 +970,37 @@ where [refTable].[PromotionID] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Sync Promotion data"
+      DTS:refId="Package\Sync Geography data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{28F4B99B-7CF9-4AD2-8249-0834C5AFFA3F}"
+      DTS:DTSID="{36BF13CD-9EF1-4DB3-A8B5-9250776BE44E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sync Promotion data"
+      DTS:ObjectName="Sync Geography data"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2CC69F00-1C23-4AD9-8600-48FE086EA683}"
-          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimPromotion]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{7A87DF68-B140-4475-A396-43E521C4B8A0}"
+          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimGeography]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Update Promotion Row Version"
+      DTS:refId="Package\Update Geography Row version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C2AD2A29-991B-4504-89FB-F37F0E72F595}"
+      DTS:DTSID="{AA93CC1E-F476-4C12-B2D7-6AC38717E1DA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Update Promotion Row Version"
+      DTS:ObjectName="Update Geography Row version"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2CC69F00-1C23-4AD9-8600-48FE086EA683}"
-          SQLTask:SqlStatementSource="Execute [dbo].[UpdateLastPackageRowVersion] @tableName='Promotion', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{7A87DF68-B140-4475-A396-43E521C4B8A0}"
+          SQLTask:SqlStatementSource="Execute [dbo].[UpdateLastPackageRowVersion] @tableName='Geography', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::DBTSValue"
@@ -1037,43 +1015,43 @@ where [refTable].[PromotionID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{42954C6D-2E7C-48C9-9E0E-52BF13EBDDC1}"
+      DTS:DTSID="{007C8F20-49CA-4655-95BF-2083B4F43B26}"
       DTS:From="Package\Get DataBase Row Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Get Promotion Row Version" />
+      DTS:To="Package\Get Geography Row Version" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{22410EDA-82F4-41E1-A5E4-A1B71880B126}"
-      DTS:From="Package\Get Promotion Row Version"
+      DTS:DTSID="{EED65408-6087-4425-A1A0-5C1423FCF2D6}"
+      DTS:From="Package\Get Geography Row Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Clean the staging area" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{4E9F1385-7F41-4313-BB1F-AD418E1697E4}"
+      DTS:DTSID="{118335A3-6BA8-4E75-BBF9-9E63EDF3644D}"
       DTS:From="Package\Clean the staging area"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Add New Promotion" />
+      DTS:To="Package\Add new Geography" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{85D0C284-1363-439C-AA38-8F4C415D852B}"
-      DTS:From="Package\Add New Promotion"
+      DTS:DTSID="{3711D77B-A92A-46AD-B40B-4BFAA325F523}"
+      DTS:From="Package\Add new Geography"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Sync Promotion data" />
+      DTS:To="Package\Sync Geography data" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{0F75E78D-EAE7-42B6-B5DF-73E9748178A6}"
-      DTS:From="Package\Sync Promotion data"
+      DTS:DTSID="{73188EFA-342F-4D8D-A106-C5BF1EC5C82D}"
+      DTS:From="Package\Sync Geography data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Update Promotion Row Version" />
+      DTS:To="Package\Update Geography Row version" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1088,55 +1066,55 @@ where [refTable].[PromotionID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="193,42"
-          Id="Package\Add New Promotion"
-          TopLeft="302.357143720042,271.19117615136" />
+          Size="179,42"
+          Id="Package\Add new Geography"
+          TopLeft="249.357143720042,257.19117615136" />
         <NodeLayout
-          Size="223,42"
+          Size="196,42"
           Id="Package\Clean the staging area"
-          TopLeft="184.535714723246,191.441176216881" />
+          TopLeft="173.535714723246,186.441176216881" />
         <NodeLayout
-          Size="220,42"
+          Size="224,42"
           Id="Package\Get DataBase Row Version"
-          TopLeft="41.85714322511,53.588235198936" />
+          TopLeft="13.85714322511,38.588235198936" />
         <NodeLayout
-          Size="222,42"
-          Id="Package\Get Promotion Row Version"
-          TopLeft="126.928571788175,124.470588065709" />
+          Size="219,42"
+          Id="Package\Get Geography Row Version"
+          TopLeft="82.928571788175,110.470588065709" />
         <NodeLayout
-          Size="202,42"
-          Id="Package\Sync Promotion data"
-          TopLeft="372.428572719499,338.573529035226" />
+          Size="185,42"
+          Id="Package\Sync Geography data"
+          TopLeft="332.428572719499,326.573529035226" />
         <NodeLayout
-          Size="233,42"
-          Id="Package\Update Promotion Row Version"
-          TopLeft="440.928572990913,407.499999572687" />
+          Size="235,42"
+          Id="Package\Update Geography Row version"
+          TopLeft="407.928572990913,397.499999572687" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="151.85714322511,95.588235198936">
+          TopLeft="125.85714322511,80.588235198936">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="86.071428563065,28.882352866773"
+              EndConnector="66.571428563065,29.882352866773"
               Start="0,0"
-              End="86.071428563065,21.382352866773">
+              End="66.571428563065,22.382352866773">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.4411764333865" />
+                    End="0,10.9411764333865" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.4411764333865"
-                    Point2="0,14.4411764333865"
-                    Point3="4,14.4411764333865" />
+                    Point1="0,10.9411764333865"
+                    Point2="0,14.9411764333865"
+                    Point3="4,14.9411764333865" />
                   <mssgle:LineSegment
-                    End="82.071428563065,14.4411764333865" />
+                    End="62.571428563065,14.9411764333865" />
                   <mssgle:CubicBezierSegment
-                    Point1="82.071428563065,14.4411764333865"
-                    Point2="86.071428563065,14.4411764333865"
-                    Point3="86.071428563065,18.4411764333865" />
+                    Point1="62.571428563065,14.9411764333865"
+                    Point2="66.571428563065,14.9411764333865"
+                    Point3="66.571428563065,18.9411764333865" />
                   <mssgle:LineSegment
-                    End="86.071428563065,21.382352866773" />
+                    End="66.571428563065,22.382352866773" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1147,30 +1125,30 @@ where [refTable].[PromotionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="237.928571788175,166.470588065709">
+          TopLeft="192.428571788175,152.470588065709">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="58.107142935071,24.970588151172"
+              EndConnector="79.107142935071,33.970588151172"
               Start="0,0"
-              End="58.107142935071,17.470588151172">
+              End="79.107142935071,26.470588151172">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.485294075586" />
+                    End="0,12.985294075586" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.485294075586"
-                    Point2="0,12.485294075586"
-                    Point3="4,12.485294075586" />
+                    Point1="0,12.985294075586"
+                    Point2="0,16.985294075586"
+                    Point3="4,16.985294075586" />
                   <mssgle:LineSegment
-                    End="54.107142935071,12.485294075586" />
+                    End="75.107142935071,16.985294075586" />
                   <mssgle:CubicBezierSegment
-                    Point1="54.107142935071,12.485294075586"
-                    Point2="58.107142935071,12.485294075586"
-                    Point3="58.107142935071,16.485294075586" />
+                    Point1="75.107142935071,16.985294075586"
+                    Point2="79.107142935071,16.985294075586"
+                    Point3="79.107142935071,20.985294075586" />
                   <mssgle:LineSegment
-                    End="58.107142935071,17.470588151172" />
+                    End="79.107142935071,26.470588151172" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1181,30 +1159,30 @@ where [refTable].[PromotionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="296.035714723246,233.441176216881">
+          TopLeft="271.535714723246,228.441176216881">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="102.821428996796,37.749999934479"
+              EndConnector="67.321428996796,28.749999934479"
               Start="0,0"
-              End="102.821428996796,30.249999934479">
+              End="67.321428996796,21.249999934479">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.8749999672395" />
+                    End="0,10.3749999672395" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.8749999672395"
-                    Point2="0,18.8749999672395"
-                    Point3="4,18.8749999672395" />
+                    Point1="0,10.3749999672395"
+                    Point2="0,14.3749999672395"
+                    Point3="4,14.3749999672395" />
                   <mssgle:LineSegment
-                    End="98.821428996796,18.8749999672395" />
+                    End="63.321428996796,14.3749999672395" />
                   <mssgle:CubicBezierSegment
-                    Point1="98.821428996796,18.8749999672395"
-                    Point2="102.821428996796,18.8749999672395"
-                    Point3="102.821428996796,22.8749999672395" />
+                    Point1="63.321428996796,14.3749999672395"
+                    Point2="67.321428996796,14.3749999672395"
+                    Point3="67.321428996796,18.3749999672395" />
                   <mssgle:LineSegment
-                    End="102.821428996796,30.249999934479" />
+                    End="67.321428996796,21.249999934479" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1215,30 +1193,30 @@ where [refTable].[PromotionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="398.857143720042,313.19117615136">
+          TopLeft="338.857143720042,299.19117615136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="74.571428999457,25.382352883866"
+              EndConnector="86.071428999457,27.382352883866"
               Start="0,0"
-              End="74.571428999457,17.882352883866">
+              End="86.071428999457,19.882352883866">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.69117644193298" />
+                    End="0,9.69117644193298" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.69117644193298"
-                    Point2="0,12.691176441933"
-                    Point3="4,12.691176441933" />
+                    Point1="0,9.69117644193298"
+                    Point2="0,13.691176441933"
+                    Point3="4,13.691176441933" />
                   <mssgle:LineSegment
-                    End="70.571428999457,12.691176441933" />
+                    End="82.071428999457,13.691176441933" />
                   <mssgle:CubicBezierSegment
-                    Point1="70.571428999457,12.691176441933"
-                    Point2="74.571428999457,12.691176441933"
-                    Point3="74.571428999457,16.691176441933" />
+                    Point1="82.071428999457,13.691176441933"
+                    Point2="86.071428999457,13.691176441933"
+                    Point3="86.071428999457,17.691176441933" />
                   <mssgle:LineSegment
-                    End="74.571428999457,17.882352883866" />
+                    End="86.071428999457,19.882352883866" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1249,30 +1227,30 @@ where [refTable].[PromotionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="473.428572719499,380.573529035226">
+          TopLeft="424.928572719499,368.573529035226">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="84.000000271414,26.926470537461"
+              EndConnector="100.500000271414,28.926470537461"
               Start="0,0"
-              End="84.000000271414,19.426470537461">
+              End="100.500000271414,21.426470537461">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.4632352687305" />
+                    End="0,10.4632352687305" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.4632352687305"
-                    Point2="0,13.4632352687305"
-                    Point3="4,13.4632352687305" />
+                    Point1="0,10.4632352687305"
+                    Point2="0,14.4632352687305"
+                    Point3="4,14.4632352687305" />
                   <mssgle:LineSegment
-                    End="80.000000271414,13.4632352687305" />
+                    End="96.5000002714139,14.4632352687305" />
                   <mssgle:CubicBezierSegment
-                    Point1="80.000000271414,13.4632352687305"
-                    Point2="84.000000271414,13.4632352687305"
-                    Point3="84.000000271414,17.4632352687305" />
+                    Point1="96.5000002714139,14.4632352687305"
+                    Point2="100.500000271414,14.4632352687305"
+                    Point3="100.500000271414,18.4632352687305" />
                   <mssgle:LineSegment
-                    End="84.000000271414,19.426470537461" />
+                    End="100.500000271414,21.426470537461" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1285,52 +1263,40 @@ where [refTable].[PromotionID] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Add New Promotion">
+    design-time-name="Package\Add new Geography">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="144,42"
-          Id="Package\Add New Promotion\Lookup"
-          TopLeft="577.999991387129,301.999995499849" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Add New Promotion\Load the staging area"
-          TopLeft="431.999993562699,422.999993696809" />
+          Size="185,42"
+          Id="Package\Add new Geography\Load the staging area"
+          TopLeft="360.999993562699,432.999993696809" />
         <NodeLayout
           Size="158,42"
-          Id="Package\Add New Promotion\Get row changes"
+          Id="Package\Add new Geography\Get row changes"
           TopLeft="505.999992460012,185.999997228384" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\Add New Promotion\Add New Promotion"
-          TopLeft="745.999988883734,442.999993398786" />
+          Size="113,42"
+          Id="Package\Add new Geography\Lookup"
+          TopLeft="526.999991387129,292.999995499849" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Add new Geography\Add new Geography"
+          TopLeft="624.999988883734,440.999993398786" />
         <EdgeLayout
-          Id="Package\Add New Promotion.Paths[OLE DB Source Output]"
-          TopLeft="584.999992460012,227.999997228384">
+          Id="Package\Add new Geography.Paths[OLE DB Source Output]"
+          TopLeft="584.24999192357,227.999997228384">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.999998927117,73.999998271465"
+              EndConnector="0,64.999998271465"
               Start="0,0"
-              End="64.999998927117,66.499998271465">
+              End="0,57.499998271465">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.9999991357325" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.9999991357325"
-                    Point2="0,36.9999991357325"
-                    Point3="4,36.9999991357325" />
-                  <mssgle:LineSegment
-                    End="60.999998927117,36.9999991357325" />
-                  <mssgle:CubicBezierSegment
-                    Point1="60.999998927117,36.9999991357325"
-                    Point2="64.999998927117,36.9999991357325"
-                    Point3="64.999998927117,40.9999991357325" />
-                  <mssgle:LineSegment
-                    End="64.999998927117,66.499998271465" />
+                    End="0,57.499998271465" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1340,74 +1306,74 @@ where [refTable].[PromotionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Add New Promotion.Paths[Lookup No Match Output]"
-          TopLeft="672.666658053796,343.999995499849">
+          Id="Package\Add new Geography.Paths[Lookup No Match Output]"
+          TopLeft="600.999991387129,334.999995499849">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="161.833330829938,98.999997898937"
+              EndConnector="113.499997496605,105.999997898937"
               Start="0,0"
-              End="161.833330829938,91.499997898937">
+              End="113.499997496605,98.499997898937">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.2527463984689" />
+                    End="0,39.2879572571575" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.2527463984689"
-                    Point2="0,40.2527463984689"
-                    Point3="4,40.2527463984689" />
+                    Point1="0,39.2879572571575"
+                    Point2="0,43.2879572571575"
+                    Point3="4,43.2879572571575" />
                   <mssgle:LineSegment
-                    End="157.833330829938,40.2527463984689" />
+                    End="109.499997496605,43.2879572571575" />
                   <mssgle:CubicBezierSegment
-                    Point1="157.833330829938,40.2527463984689"
-                    Point2="161.833330829938,40.2527463984689"
-                    Point3="161.833330829938,44.2527463984689" />
+                    Point1="109.499997496605,43.2879572571575"
+                    Point2="113.499997496605,43.2879572571575"
+                    Point3="113.499997496605,47.2879572571575" />
                   <mssgle:LineSegment
-                    End="161.833330829938,91.499997898937" />
+                    End="113.499997496605,98.499997898937" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="25.1102786962192,45.2527463984689,111.6127734375,11.609375"
+              BoundingBox="0.943612029552519,48.2879572571575,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Add New Promotion.Paths[Lookup Match Output]"
-          TopLeft="627.333324720462,343.999995499849">
+          Id="Package\Add new Geography.Paths[Lookup Match Output]"
+          TopLeft="565.999991387129,334.999995499849">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104.833331157763,78.99999819696"
+              EndConnector="-112.49999782443,97.99999819696"
               Start="0,0"
-              End="-104.833331157763,71.49999819696">
+              End="-112.49999782443,90.49999819696">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.120878387775" />
+                    End="0,36.020941672057" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.120878387775"
-                    Point2="0,32.120878387775"
-                    Point3="-4,32.120878387775" />
+                    Point1="0,36.020941672057"
+                    Point2="0,40.020941672057"
+                    Point3="-4,40.020941672057" />
                   <mssgle:LineSegment
-                    End="-100.833331157763,32.120878387775" />
+                    End="-108.49999782443,40.020941672057" />
                   <mssgle:CubicBezierSegment
-                    Point1="-100.833331157763,32.120878387775"
-                    Point2="-104.833331157763,32.120878387775"
-                    Point3="-104.833331157763,36.120878387775" />
+                    Point1="-108.49999782443,40.020941672057"
+                    Point2="-112.49999782443,40.020941672057"
+                    Point3="-112.49999782443,44.020941672057" />
                   <mssgle:LineSegment
-                    End="-104.833331157763,71.49999819696" />
+                    End="-112.49999782443,90.49999819696" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-100.608052297632,37.120878387775,96.3827734375,11.609375"
+              BoundingBox="-104.441385630965,45.020941672057,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1415,30 +1381,7 @@ where [refTable].[PromotionID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Promotion\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimPromotion]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add New Promotion\Load the staging area">
+    design-time-name="Package\Add new Geography\Load the staging area">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1451,7 +1394,7 @@ where [refTable].[PromotionID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Promotion\Get row changes">
+    design-time-name="Package\Add new Geography\Get row changes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1459,7 +1402,30 @@ where [refTable].[PromotionID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Promotion\Add New Promotion">
+    design-time-name="Package\Add new Geography\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimGeography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Geography\Add new Geography">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

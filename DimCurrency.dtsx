@@ -7,12 +7,12 @@
   DTS:CreatorName="AL-KAHTE\mkalk"
   DTS:DTSID="{5AF97712-4433-48F4-A543-C6F9A5A14CD6}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimCurrency"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{1F0AFC29-3C18-48CD-B98F-0C48780EDB06}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{B80ADC8B-C471-417A-AEE5-97B94AAD247F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDW-G1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{E1DE1421-1F56-4A17-AC56-EEB3E53E485D}localhost\SQLSERVER2022.AWDW-G1;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{E1DE1421-1F56-4A17-AC56-EEB3E53E485D}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDB-G1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{423A626E-79D8-4BC4-BABF-D9C394FDE646}localhost\SQLSERVER2022.AWDB-G1;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{423A626E-79D8-4BC4-BABF-D9C394FDE646}SOURCE.AWDB-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -288,16 +288,6 @@
                       lineageId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Output].Columns[CurrencyName]"
                       name="CurrencyName"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Output].Columns[rowversion]"
-                      dataType="bytes"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
-                      length="8"
-                      lineageId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Output].Columns[rowversion]"
-                      name="rowversion"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -311,11 +301,6 @@
                       dataType="wstr"
                       length="50"
                       name="CurrencyName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
-                      dataType="bytes"
-                      length="8"
-                      name="rowversion" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -335,12 +320,6 @@
                       length="50"
                       lineageId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Error Output].Columns[CurrencyName]"
                       name="CurrencyName" />
-                    <outputColumn
-                      refId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Error Output].Columns[rowversion]"
-                      dataType="bytes"
-                      length="8"
-                      lineageId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Error Output].Columns[rowversion]"
-                      name="rowversion" />
                     <outputColumn
                       refId="Package\Add new Currency\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -832,39 +811,55 @@ where [refTable].[CurrencyCode] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164.8,41.6"
+          Size="181,42"
           Id="Package\Add new Currency"
-          TopLeft="405.357143720042,364.19117615136" />
+          TopLeft="249.357143720042,257.19117615136" />
         <NodeLayout
-          Size="184,41.6"
+          Size="196,42"
           Id="Package\Clean the staging area"
-          TopLeft="205.535714723246,289.441176216881" />
+          TopLeft="173.535714723246,186.441176216881" />
         <NodeLayout
-          Size="201.6,41.6"
+          Size="217,42"
           Id="Package\Get Currency Row Version"
-          TopLeft="168.928571788175,193.470588065709" />
+          TopLeft="82.928571788175,110.470588065709" />
         <NodeLayout
-          Size="204,41.6"
+          Size="224,42"
           Id="Package\Get DataBase Row Version"
-          TopLeft="172.85714322511,108.588235198936" />
+          TopLeft="13.85714322511,38.588235198936" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="176,42"
           Id="Package\Sync Currency data"
-          TopLeft="606.428572719499,429.573529035226" />
+          TopLeft="332.428572719499,326.573529035226" />
+        <NodeLayout
+          Size="228,43"
+          Id="Package\Update Currency Row version"
+          TopLeft="407.928572990913,397.499999572687" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="272.292857506643,150.188235198936">
+          TopLeft="125.85714322511,80.588235198936">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.2823528667733"
+              EndConnector="65.571428563065,29.882352866773"
               Start="0,0"
-              End="0,35.7823528667733">
+              End="65.571428563065,22.382352866773">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.7823528667733" />
+                    End="0,10.9411764333865" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9411764333865"
+                    Point2="0,14.9411764333865"
+                    Point3="4,14.9411764333865" />
+                  <mssgle:LineSegment
+                    End="61.571428563065,14.9411764333865" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.571428563065,14.9411764333865"
+                    Point2="65.571428563065,14.9411764333865"
+                    Point3="65.571428563065,18.9411764333865" />
+                  <mssgle:LineSegment
+                    End="65.571428563065,22.382352866773" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -875,30 +870,30 @@ where [refTable].[CurrencyCode] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="269.728571788175,235.070588065709">
+          TopLeft="191.428571788175,152.470588065709">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="27.8071429350709,54.3705881511721"
+              EndConnector="80.107142935071,33.970588151172"
               Start="0,0"
-              End="27.8071429350709,46.8705881511721">
+              End="80.107142935071,26.470588151172">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.1852940755861" />
+                    End="0,12.985294075586" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.1852940755861"
-                    Point2="0,27.1852940755861"
-                    Point3="4,27.1852940755861" />
+                    Point1="0,12.985294075586"
+                    Point2="0,16.985294075586"
+                    Point3="4,16.985294075586" />
                   <mssgle:LineSegment
-                    End="23.8071429350709,27.1852940755861" />
+                    End="76.107142935071,16.985294075586" />
                   <mssgle:CubicBezierSegment
-                    Point1="23.8071429350709,27.1852940755861"
-                    Point2="27.8071429350709,27.1852940755861"
-                    Point3="27.8071429350709,31.1852940755861" />
+                    Point1="76.107142935071,16.985294075586"
+                    Point2="80.107142935071,16.985294075586"
+                    Point3="80.107142935071,20.985294075586" />
                   <mssgle:LineSegment
-                    End="27.8071429350709,46.8705881511721" />
+                    End="80.107142935071,26.470588151172" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -909,30 +904,30 @@ where [refTable].[CurrencyCode] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="297.535714723246,331.041176216881">
+          TopLeft="271.535714723246,228.441176216881">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="190.221428996796,33.1499999344788"
+              EndConnector="68.321428996796,28.749999934479"
               Start="0,0"
-              End="190.221428996796,25.6499999344788">
+              End="68.321428996796,21.249999934479">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5749999672394" />
+                    End="0,10.3749999672395" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5749999672394"
-                    Point2="0,16.5749999672394"
-                    Point3="4,16.5749999672394" />
+                    Point1="0,10.3749999672395"
+                    Point2="0,14.3749999672395"
+                    Point3="4,14.3749999672395" />
                   <mssgle:LineSegment
-                    End="186.221428996796,16.5749999672394" />
+                    End="64.321428996796,14.3749999672395" />
                   <mssgle:CubicBezierSegment
-                    Point1="186.221428996796,16.5749999672394"
-                    Point2="190.221428996796,16.5749999672394"
-                    Point3="190.221428996796,20.5749999672394" />
+                    Point1="64.321428996796,14.3749999672395"
+                    Point2="68.321428996796,14.3749999672395"
+                    Point3="68.321428996796,18.3749999672395" />
                   <mssgle:LineSegment
-                    End="190.221428996796,25.6499999344788" />
+                    End="68.321428996796,21.249999934479" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -943,30 +938,30 @@ where [refTable].[CurrencyCode] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="487.757143720042,405.79117615136">
+          TopLeft="339.857143720042,299.19117615136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="203.471428999457,23.7823528838662"
+              EndConnector="80.571428999457,27.382352883866"
               Start="0,0"
-              End="203.471428999457,16.2823528838662">
+              End="80.571428999457,19.882352883866">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.89117644193308" />
+                    End="0,9.69117644193298" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,7.89117644193308"
-                    Point2="0,11.8911764419331"
-                    Point3="4,11.8911764419331" />
+                    Point1="0,9.69117644193298"
+                    Point2="0,13.691176441933"
+                    Point3="4,13.691176441933" />
                   <mssgle:LineSegment
-                    End="199.471428999457,11.8911764419331" />
+                    End="76.571428999457,13.691176441933" />
                   <mssgle:CubicBezierSegment
-                    Point1="199.471428999457,11.8911764419331"
-                    Point2="203.471428999457,11.8911764419331"
-                    Point3="203.471428999457,15.8911764419331" />
+                    Point1="76.571428999457,13.691176441933"
+                    Point2="80.571428999457,13.691176441933"
+                    Point3="80.571428999457,17.691176441933" />
                   <mssgle:LineSegment
-                    End="203.471428999457,16.2823528838662" />
+                    End="80.571428999457,19.882352883866" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -975,36 +970,32 @@ where [refTable].[CurrencyCode] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="217.6,41.6"
-          Id="Package\Update Currency Row version"
-          TopLeft="733.928572990913,535.499999572687" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="691.228572719499,471.173529035227">
+          TopLeft="420.428572719499,368.573529035226">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.500000271414,64.3264705374607"
+              EndConnector="101.500000271414,28.926470537461"
               Start="0,0"
-              End="151.500000271414,56.8264705374607">
+              End="101.500000271414,21.426470537461">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.1632352687303" />
+                    End="0,10.4632352687305" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.1632352687303"
-                    Point2="0,32.1632352687303"
-                    Point3="4,32.1632352687303" />
+                    Point1="0,10.4632352687305"
+                    Point2="0,14.4632352687305"
+                    Point3="4,14.4632352687305" />
                   <mssgle:LineSegment
-                    End="147.500000271414,32.1632352687303" />
+                    End="97.500000271414,14.4632352687305" />
                   <mssgle:CubicBezierSegment
-                    Point1="147.500000271414,32.1632352687303"
-                    Point2="151.500000271414,32.1632352687303"
-                    Point3="151.500000271414,36.1632352687303" />
+                    Point1="97.500000271414,14.4632352687305"
+                    Point2="101.500000271414,14.4632352687305"
+                    Point3="101.500000271414,18.4632352687305" />
                   <mssgle:LineSegment
-                    End="151.500000271414,56.8264705374607" />
+                    End="101.500000271414,21.426470537461" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1022,19 +1013,19 @@ where [refTable].[CurrencyCode] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="180.8,41.6"
+          Size="181,42"
           Id="Package\Add new Currency\Load the staging area"
           TopLeft="431.999993562699,422.999993696809" />
         <NodeLayout
-          Size="157.6,41.6"
+          Size="158,42"
           Id="Package\Add new Currency\Get row changes"
-          TopLeft="505.999992460012,185.999997228384" />
+          TopLeft="551.999992460012,191.999997228384" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Add new Currency\Add new Currency"
           TopLeft="745.999988883734,442.999993398786" />
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Add new Currency\Lookup"
           TopLeft="577.999991387129,301.999995499849" />
         <EdgeLayout
@@ -1111,38 +1102,24 @@ where [refTable].[CurrencyCode] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Add new Currency.Paths[OLE DB Source Output]"
-          TopLeft="584.799992460012,227.599997228384">
+          TopLeft="632.74999192357,233.999997228384">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.5999989271164,74.3999982714654"
+              EndConnector="0,67.999998271465"
               Start="0,0"
-              End="49.5999989271164,66.8999982714654">
+              End="0,60.499998271465">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.1999991357327" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.1999991357327"
-                    Point2="0,37.1999991357327"
-                    Point3="4,37.1999991357327" />
-                  <mssgle:LineSegment
-                    End="45.5999989271164,37.1999991357327" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.5999989271164,37.1999991357327"
-                    Point2="49.5999989271164,37.1999991357327"
-                    Point3="49.5999989271164,41.1999991357327" />
-                  <mssgle:LineSegment
-                    End="49.5999989271164,66.8999982714654" />
+                    End="0,60.499998271465" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
