@@ -7,12 +7,12 @@
   DTS:CreatorName="AL-KAHTE\mkalk"
   DTS:DTSID="{9105A8B4-4C92-4D56-A075-D08727977A88}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimProduct"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{B80058E1-1C1C-4D00-8C0E-3BAA5DF1328B}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{178BE4C3-A931-475C-A4D5-12623A1E5543}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{98F59DEB-D58D-4BD5-B599-5EB74BB58352}DESTINATION.AWDW-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{98F59DEB-D58D-4BD5-B599-5EB74BB58352}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{B63B47AA-A534-41D8-8E41-79511733C2A8}SOURCE.AWDB-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{B63B47AA-A534-41D8-8E41-79511733C2A8}SOURCE.AWDB-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -283,6 +283,13 @@
                       cachedName="EndDate"
                       externalMetadataColumnId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
                       lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[EndDate]" />
+                    <inputColumn
+                      refId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].Columns[Status_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="Status_unicode"
+                      externalMetadataColumnId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -384,7 +391,7 @@
                     <externalMetadataColumn
                       refId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       dataType="wstr"
-                      length="15"
+                      length="50"
                       name="Status" />
                   </externalMetadataColumns>
                 </input>
@@ -407,6 +414,84 @@
                       refId="Package\Add new Product\Add new Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Add new Product\Add new Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add new Product\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input].Columns[Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Status"
+                      lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="25"
+                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]"
+                      name="Status_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1144,6 +1229,13 @@
                       cachedName="ProductKey"
                       externalMetadataColumnId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
                       lineageId="Package\Add new Product\Lookup.Outputs[Lookup Match Output].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].Columns[Status_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="Status_unicode"
+                      externalMetadataColumnId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1245,7 +1337,7 @@
                     <externalMetadataColumn
                       refId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       dataType="wstr"
-                      length="15"
+                      length="50"
                       name="Status" />
                   </externalMetadataColumns>
                 </input>
@@ -1435,6 +1527,11 @@ where [refTable].[ProductID] = ?</property>
           </components>
           <paths>
             <path
+              refId="Package\Add new Product.Paths[Data Conversion Output]"
+              endId="Package\Add new Product\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Add new Product.Paths[Lookup Match Output]"
               endId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
@@ -1446,7 +1543,7 @@ where [refTable].[ProductID] = ?</property>
               startId="Package\Add new Product\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Add new Product.Paths[OLE DB Source Output]"
-              endId="Package\Add new Product\Lookup.Inputs[Lookup Input]"
+              endId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output]" />
           </paths>
@@ -1611,27 +1708,27 @@ where [refTable].[ProductID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Add new Product"
           TopLeft="249.357143720042,257.19117615136" />
         <NodeLayout
-          Size="196,41.6"
+          Size="196,42"
           Id="Package\Clean the staging area"
           TopLeft="173.535714723246,186.441176216881" />
         <NodeLayout
-          Size="224,41.6"
+          Size="224,42"
           Id="Package\Get DataBase Row Version"
           TopLeft="13.85714322511,38.588235198936" />
         <NodeLayout
-          Size="203.2,41.6"
+          Size="203,42"
           Id="Package\Get Product Row Version"
           TopLeft="82.928571788175,110.470588065709" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Sync Product data"
           TopLeft="334.571429866918,325.808823153543" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\Update Product Row version"
           TopLeft="407.928572990913,397.499999572687" />
         <EdgeLayout
@@ -1811,37 +1908,113 @@ where [refTable].[ProductID] = ?</property>
     design-time-name="Package\Add new Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184.8,41.6"
+          Size="185,42"
           Id="Package\Add new Product\Load the staging area"
-          TopLeft="360.999993562699,432.999993696809" />
+          TopLeft="362.999993562699,384.999993696809" />
         <NodeLayout
-          Size="158.4,41.6"
+          Size="166,42"
           Id="Package\Add new Product\Get row changes"
-          TopLeft="505.999992460012,185.999997228384" />
+          TopLeft="493.999992460012,90.999997228384" />
         <NodeLayout
-          Size="112.8,41.6"
+          Size="156,42"
           Id="Package\Add new Product\Lookup"
-          TopLeft="526.999991387129,292.999995499849" />
+          TopLeft="494.999991387129,270.999995499849" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Add new Product\Add new Product"
-          TopLeft="624.999988883734,440.999993398786" />
+          TopLeft="616.999988883734,390.999993398786" />
         <EdgeLayout
-          Id="Package\Add new Product.Paths[OLE DB Source Output]"
-          TopLeft="584.24999192357,227.999997228384">
+          Id="Package\Add new Product.Paths[Lookup No Match Output]"
+          TopLeft="597.666658053796,312.999995499849">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.999998271465"
+              EndConnector="100.833330829938,77.999997898937"
               Start="0,0"
-              End="0,57.499998271465">
+              End="100.833330829938,70.499997898937">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.499998271465" />
+                    End="0,27.6751260503298" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.6751260503298"
+                    Point2="0,31.6751260503298"
+                    Point3="4,31.6751260503298" />
+                  <mssgle:LineSegment
+                    End="96.8333308299384,31.6751260503298" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.8333308299384,31.6751260503298"
+                    Point2="100.833330829938,31.6751260503298"
+                    Point3="100.833330829938,35.6751260503298" />
+                  <mssgle:LineSegment
+                    End="100.833330829938,70.499997898937" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.3897213037808,36.6751260503298,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Product.Paths[Lookup Match Output]"
+          TopLeft="548.333324720462,312.999995499849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92.8333311577633,71.99999819696"
+              Start="0,0"
+              End="-92.8333311577633,64.49999819696">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2385779480041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2385779480041"
+                    Point2="0,29.2385779480041"
+                    Point3="-4,29.2385779480041" />
+                  <mssgle:LineSegment
+                    End="-88.8333311577633,29.2385779480041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88.8333311577633,29.2385779480041"
+                    Point2="-92.8333311577633,29.2385779480041"
+                    Point3="-92.8333311577633,33.2385779480041" />
+                  <mssgle:LineSegment
+                    End="-92.8333311577633,64.49999819696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.6080522976317,34.2385779480041,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Add new Product\Data Conversion"
+          TopLeft="498,174" />
+        <EdgeLayout
+          Id="Package\Add new Product.Paths[OLE DB Source Output]"
+          TopLeft="577.749996230006,132.999997228384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.000002771616"
+              Start="0,0"
+              End="0,33.500002771616">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.500002771616" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1851,75 +2024,25 @@ where [refTable].[ProductID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Add new Product.Paths[Lookup No Match Output]"
-          TopLeft="600.999991387129,334.999995499849">
+          Id="Package\Add new Product.Paths[Data Conversion Output]"
+          TopLeft="575.749995693564,216">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.499997496605,105.999997898937"
+              EndConnector="0,54.999995499849"
               Start="0,0"
-              End="105.499997496605,98.499997898937">
+              End="0,47.499995499849">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.2879572571575" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.2879572571575"
-                    Point2="0,43.2879572571575"
-                    Point3="4,43.2879572571575" />
-                  <mssgle:LineSegment
-                    End="101.499997496605,43.2879572571575" />
-                  <mssgle:CubicBezierSegment
-                    Point1="101.499997496605,43.2879572571575"
-                    Point2="105.499997496605,43.2879572571575"
-                    Point3="105.499997496605,47.2879572571575" />
-                  <mssgle:LineSegment
-                    End="105.499997496605,98.499997898937" />
+                    End="0,47.499995499849" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.05638797044748,48.2879572571575,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add new Product.Paths[Lookup Match Output]"
-          TopLeft="565.999991387129,334.999995499849">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-112.49999782443,97.99999819696"
-              Start="0,0"
-              End="-112.49999782443,90.49999819696">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.020941672057" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.020941672057"
-                    Point2="0,40.020941672057"
-                    Point3="-4,40.020941672057" />
-                  <mssgle:LineSegment
-                    End="-108.49999782443,40.020941672057" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-108.49999782443,40.020941672057"
-                    Point2="-112.49999782443,40.020941672057"
-                    Point3="-112.49999782443,44.020941672057" />
-                  <mssgle:LineSegment
-                    End="-112.49999782443,90.49999819696" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-104.441385630965,45.020941672057,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

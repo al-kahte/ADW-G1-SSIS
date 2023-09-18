@@ -7,12 +7,12 @@
   DTS:CreatorName="AL-KAHTE\mkalk"
   DTS:DTSID="{2E9B4002-46E8-43AC-ADE8-4377B1BDD487}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimStore"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{70943324-B96E-4993-A66D-7C2ED9EE9D8B}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{9C853BF9-EFD0-4789-8978-194EFA4B400B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{8D7F704B-D612-4FDA-B2D5-975867C18992}DESTINATION.AWDW-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{8D7F704B-D612-4FDA-B2D5-975867C18992}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -1002,27 +1002,27 @@ where [refTable].[StoreID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147,42"
           Id="Package\Add new Store"
           TopLeft="252.214286583267,256.426470269677" />
         <NodeLayout
-          Size="196,41.6"
+          Size="196,42"
           Id="Package\Clean the staging area"
           TopLeft="176.392857586471,186.441176216881" />
         <NodeLayout
-          Size="184.8,41.6"
-          Id="Package\Get Store Row Version"
-          TopLeft="82.928571788175,110.470588065709" />
-        <NodeLayout
-          Size="224,41.6"
+          Size="224,42"
           Id="Package\Get DataBase Row Version"
           TopLeft="13.85714322511,38.588235198936" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="185,42"
+          Id="Package\Get Store Row Version"
+          TopLeft="82.928571788175,110.470588065709" />
+        <NodeLayout
+          Size="153,42"
           Id="Package\Sync Store data"
           TopLeft="334.571429866918,325.808823153543" />
         <NodeLayout
-          Size="200.8,41.6"
+          Size="201,42"
           Id="Package\Update Store Row version"
           TopLeft="407.928572990913,397.499999572687" />
         <EdgeLayout
@@ -1322,7 +1322,7 @@ where [refTable].[StoreID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1332,10 +1332,23 @@ where [refTable].[StoreID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Store\Load the staging area">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1349,19 +1362,6 @@ where [refTable].[StoreID] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Add new Store\Add new Store">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add new Store\Load the staging area">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

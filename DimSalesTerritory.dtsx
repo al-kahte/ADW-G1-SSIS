@@ -7,12 +7,12 @@
   DTS:CreatorName="AL-KAHTE\mkalk"
   DTS:DTSID="{48F674FF-2EBE-45FB-9E5E-BFE7C61204AD}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSalesTerritory"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{827BA044-BA3F-438A-834C-F1DEC6BDC8B2}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{1DCC6DDD-D5D5-42D3-87BF-A39177D05361}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}DESTINATION.AWDW-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{8FA0CA45-0AF6-4E36-8D58-6310FA5FF3A3}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{1D017D25-02B9-4F2C-A653-9D42FBC9570F}SOURCE.AWDB-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimPromotion-{1D017D25-02B9-4F2C-A653-9D42FBC9570F}SOURCE.AWDB-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -893,27 +893,27 @@ where [refTable].[SalesTerritoryID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="195.2,41.6"
+          Size="195,42"
           Id="Package\Add New SalesTerritory"
           TopLeft="228.357143720042,255.19117615136" />
         <NodeLayout
-          Size="193.6,41.6"
+          Size="194,42"
           Id="Package\Clean the staging area"
           TopLeft="164.535714723246,182.441176216881" />
         <NodeLayout
-          Size="216,41.6"
+          Size="216,42"
           Id="Package\Get DataBase Row Version"
           TopLeft="27.85714322511,44.588235198936" />
         <NodeLayout
-          Size="232.8,41.6"
+          Size="233,42"
           Id="Package\Get SalesTerritory Row Version"
           TopLeft="86.928571788175,112.470588065709" />
         <NodeLayout
-          Size="211.2,41.6"
+          Size="211,42"
           Id="Package\Sync SalesTerritory data"
           TopLeft="310.428572719499,327.573529035226" />
         <NodeLayout
-          Size="260,41.6"
+          Size="260,42"
           Id="Package\Update SalesTerritory Row Version"
           TopLeft="390.928572990913,405.499999572687" />
         <EdgeLayout
