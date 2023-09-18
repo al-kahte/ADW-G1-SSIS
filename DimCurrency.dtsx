@@ -7,12 +7,12 @@
   DTS:CreatorName="AL-KAHTE\mkalk"
   DTS:DTSID="{5AF97712-4433-48F4-A543-C6F9A5A14CD6}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5228.0"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimCurrency"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{B80ADC8B-C471-417A-AEE5-97B94AAD247F}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{CFB1D01D-1D3F-4822-9F8B-95E57114966B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{E1DE1421-1F56-4A17-AC56-EEB3E53E485D}DESTINATION.AWDW-G1;" />
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{E1DE1421-1F56-4A17-AC56-EEB3E53E485D}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{423A626E-79D8-4BC4-BABF-D9C394FDE646}SOURCE.AWDB-G1;" />
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{423A626E-79D8-4BC4-BABF-D9C394FDE646}SOURCE.AWDB-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -811,27 +811,27 @@ where [refTable].[CurrencyCode] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181,42"
+          Size="180.8,41.6"
           Id="Package\Add new Currency"
           TopLeft="249.357143720042,257.19117615136" />
         <NodeLayout
-          Size="196,42"
+          Size="196,41.6"
           Id="Package\Clean the staging area"
           TopLeft="173.535714723246,186.441176216881" />
         <NodeLayout
-          Size="217,42"
+          Size="216.8,41.6"
           Id="Package\Get Currency Row Version"
           TopLeft="82.928571788175,110.470588065709" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Get DataBase Row Version"
           TopLeft="13.85714322511,38.588235198936" />
         <NodeLayout
-          Size="176,42"
+          Size="176,41.6"
           Id="Package\Sync Currency data"
           TopLeft="332.428572719499,326.573529035226" />
         <NodeLayout
-          Size="228,43"
+          Size="228,43.2"
           Id="Package\Update Currency Row version"
           TopLeft="407.928572990913,397.499999572687" />
         <EdgeLayout
@@ -1126,15 +1126,25 @@ where [refTable].[CurrencyCode] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new Currency\Load the staging area">
+    design-time-name="Package\Add new Currency\Lookup">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCurrency]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1160,25 +1170,15 @@ where [refTable].[CurrencyCode] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new Currency\Lookup">
+    design-time-name="Package\Add new Currency\Load the staging area">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCurrency]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

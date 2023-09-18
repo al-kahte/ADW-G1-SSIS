@@ -7,12 +7,12 @@
   DTS:CreatorName="AL-KAHTE\mkalk"
   DTS:DTSID="{9105A8B4-4C92-4D56-A075-D08727977A88}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5228.0"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimProduct"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{88588A30-50C8-4BE3-A958-79B96DE9C063}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{B80058E1-1C1C-4D00-8C0E-3BAA5DF1328B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{98F59DEB-D58D-4BD5-B599-5EB74BB58352}DESTINATION.AWDW-G1;" />
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{98F59DEB-D58D-4BD5-B599-5EB74BB58352}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{B63B47AA-A534-41D8-8E41-79511733C2A8}SOURCE.AWDB-G1;" />
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{B63B47AA-A534-41D8-8E41-79511733C2A8}SOURCE.AWDB-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -384,7 +384,7 @@
                     <externalMetadataColumn
                       refId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       dataType="wstr"
-                      length="50"
+                      length="15"
                       name="Status" />
                   </externalMetadataColumns>
                 </input>
@@ -1245,7 +1245,7 @@
                     <externalMetadataColumn
                       refId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       dataType="wstr"
-                      length="50"
+                      length="15"
                       name="Status" />
                   </externalMetadataColumns>
                 </input>
@@ -1611,27 +1611,27 @@ where [refTable].[ProductID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Add new Product"
           TopLeft="249.357143720042,257.19117615136" />
         <NodeLayout
-          Size="196,42"
+          Size="196,41.6"
           Id="Package\Clean the staging area"
           TopLeft="173.535714723246,186.441176216881" />
         <NodeLayout
-          Size="203,42"
-          Id="Package\Get Product Row Version"
-          TopLeft="82.928571788175,110.470588065709" />
-        <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Get DataBase Row Version"
           TopLeft="13.85714322511,38.588235198936" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\Sync Product data"
-          TopLeft="332.428572719499,326.573529035226" />
+          Size="203.2,41.6"
+          Id="Package\Get Product Row Version"
+          TopLeft="82.928571788175,110.470588065709" />
         <NodeLayout
-          Size="219,42"
+          Size="168.8,41.6"
+          Id="Package\Sync Product data"
+          TopLeft="334.571429866918,325.808823153543" />
+        <NodeLayout
+          Size="219.2,41.6"
           Id="Package\Update Product Row version"
           TopLeft="407.928572990913,397.499999572687" />
         <EdgeLayout
@@ -1738,30 +1738,30 @@ where [refTable].[ProductID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="330.857143720042,299.19117615136">
+          TopLeft="330.957143720042,298.79117615136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="86.071428999457,27.382352883866"
+              EndConnector="88.0142861468757,27.0176470021833"
               Start="0,0"
-              End="86.071428999457,19.882352883866">
+              End="88.0142861468757,19.5176470021833">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.69117644193298" />
+                    End="0,9.50882350109163" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.69117644193298"
-                    Point2="0,13.691176441933"
-                    Point3="4,13.691176441933" />
+                    Point1="0,9.50882350109163"
+                    Point2="0,13.5088235010916"
+                    Point3="4,13.5088235010916" />
                   <mssgle:LineSegment
-                    End="82.071428999457,13.691176441933" />
+                    End="84.0142861468757,13.5088235010916" />
                   <mssgle:CubicBezierSegment
-                    Point1="82.071428999457,13.691176441933"
-                    Point2="86.071428999457,13.691176441933"
-                    Point3="86.071428999457,17.691176441933" />
+                    Point1="84.0142861468757,13.5088235010916"
+                    Point2="88.0142861468757,13.5088235010916"
+                    Point3="88.0142861468757,17.5088235010916" />
                   <mssgle:LineSegment
-                    End="86.071428999457,19.882352883866" />
+                    End="88.0142861468757,19.5176470021833" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1772,30 +1772,30 @@ where [refTable].[ProductID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="416.928572719499,368.573529035226">
+          TopLeft="418.971429866918,367.408823153543">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100.500000271414,28.926470537461"
+              EndConnector="98.5571431239953,30.0911764191437"
               Start="0,0"
-              End="100.500000271414,21.426470537461">
+              End="98.5571431239953,22.5911764191437">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.4632352687305" />
+                    End="0,11.0455882095718" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.4632352687305"
-                    Point2="0,14.4632352687305"
-                    Point3="4,14.4632352687305" />
+                    Point1="0,11.0455882095718"
+                    Point2="0,15.0455882095718"
+                    Point3="4,15.0455882095718" />
                   <mssgle:LineSegment
-                    End="96.5000002714139,14.4632352687305" />
+                    End="94.5571431239953,15.0455882095718" />
                   <mssgle:CubicBezierSegment
-                    Point1="96.5000002714139,14.4632352687305"
-                    Point2="100.500000271414,14.4632352687305"
-                    Point3="100.500000271414,18.4632352687305" />
+                    Point1="94.5571431239953,15.0455882095718"
+                    Point2="98.5571431239953,15.0455882095718"
+                    Point3="98.5571431239953,19.0455882095718" />
                   <mssgle:LineSegment
-                    End="100.500000271414,21.426470537461" />
+                    End="98.5571431239953,22.5911764191437" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1813,21 +1813,43 @@ where [refTable].[ProductID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="185,42"
+          Size="184.8,41.6"
           Id="Package\Add new Product\Load the staging area"
           TopLeft="360.999993562699,432.999993696809" />
         <NodeLayout
-          Size="158,42"
+          Size="158.4,41.6"
           Id="Package\Add new Product\Get row changes"
           TopLeft="505.999992460012,185.999997228384" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Add new Product\Add new Product"
-          TopLeft="624.999988883734,440.999993398786" />
-        <NodeLayout
-          Size="113,42"
+          Size="112.8,41.6"
           Id="Package\Add new Product\Lookup"
           TopLeft="526.999991387129,292.999995499849" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Add new Product\Add new Product"
+          TopLeft="624.999988883734,440.999993398786" />
+        <EdgeLayout
+          Id="Package\Add new Product.Paths[OLE DB Source Output]"
+          TopLeft="584.24999192357,227.999997228384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.999998271465"
+              Start="0,0"
+              End="0,57.499998271465">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.499998271465" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Add new Product.Paths[Lookup No Match Output]"
           TopLeft="600.999991387129,334.999995499849">
@@ -1900,28 +1922,6 @@ where [refTable].[ProductID] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add new Product.Paths[OLE DB Source Output]"
-          TopLeft="584.24999192357,227.999997228384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64.999998271465"
-              Start="0,0"
-              End="0,57.499998271465">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.499998271465" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1947,25 +1947,12 @@ where [refTable].[ProductID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new Product\Add new Product">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Add new Product\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1975,10 +1962,23 @@ where [refTable].[ProductID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Product\Add new Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
