@@ -5,46 +5,46 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="AL-KAHTE"
   DTS:CreatorName="AL-KAHTE\mkalk"
-  DTS:DTSID="{2E9B4002-46E8-43AC-ADE8-4377B1BDD487}"
+  DTS:DTSID="{72698BD9-9D81-4BFB-A26B-02AE7851B836}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5228.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimStore"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{9C853BF9-EFD0-4789-8978-194EFA4B400B}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{9F017C48-9654-4A04-BBB1-FAE8E55AF870}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8D7F704B-D612-4FDA-B2D5-975867C18992}"
+      DTS:DTSID="{86A221B3-46FD-4152-8BC0-29C4840D27B1}"
       DTS:ObjectName="DESTINATION.AWDW-G1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{8D7F704B-D612-4FDA-B2D5-975867C18992}DESTINATION.AWDW-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDW-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{86A221B3-46FD-4152-8BC0-29C4840D27B1}DESTINATION.AWDW-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SOURCE.AWDB-G1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{54B81434-E1E4-4417-8C1D-4250AD893348}"
+      DTS:DTSID="{7B33DB3A-4D86-4AD7-A086-91C72462C7E3}"
       DTS:ObjectName="SOURCE.AWDB-G1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{54B81434-E1E4-4417-8C1D-4250AD893348}SOURCE.AWDB-G1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AWDB-G1;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCurrency-{7B33DB3A-4D86-4AD7-A086-91C72462C7E3}SOURCE.AWDB-G1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EA43FC34-A772-4C2F-923B-10008317E2D3}"
+      DTS:DTSID="{EE60D838-41AE-49A8-A42A-BB2A04F51CAF}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DBTSValue">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CE63E716-DC79-4C14-A145-532A78161927}"
+      DTS:DTSID="{02FAE864-E17F-44B9-9DF3-4412A4AEA51C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastRowValue">
@@ -66,7 +66,7 @@
       DTS:refId="Package\Add new Store"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{FB0D5DF3-3D7C-4A2F-B2E3-53A395F50247}"
+      DTS:DTSID="{2438F835-7FA6-4129-8C62-7898ADC57C2C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Add new Store"
@@ -169,17 +169,49 @@
                       externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[BusinessType]"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[BusinessType]" />
                     <inputColumn
-                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[YearOpened]"
-                      cachedDataType="i4"
-                      cachedName="YearOpened"
-                      externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[YearOpened]"
-                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]" />
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[Specialty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Specialty"
+                      externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[Specialty]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[Specialty]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[BankName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BankName"
+                      externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[BankName]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[BankName]" />
                     <inputColumn
                       refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[AnnualSales]"
                       cachedDataType="i4"
                       cachedName="AnnualSales"
                       externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[AnnualSales]"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[AnnualSales]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[AnnualRevenue]"
+                      cachedDataType="i4"
+                      cachedName="AnnualRevenue"
+                      externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[AnnualRevenue]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[AnnualRevenue]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[NumberEmployees]"
+                      cachedDataType="i4"
+                      cachedName="NumberEmployees"
+                      externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[NumberEmployees]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[NumberEmployees]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[YearOpened]"
+                      cachedDataType="i4"
+                      cachedName="YearOpened"
+                      externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[YearOpened]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].Columns[GeographyKey]"
+                      cachedDataType="i4"
+                      cachedName="GeographyKey"
+                      externalMetadataColumnId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
+                      lineageId="Package\Add new Store\Lookup Geography.Outputs[Lookup Match Output].Columns[GeographyKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -192,23 +224,45 @@
                       dataType="i4"
                       name="StoreID" />
                     <externalMetadataColumn
-                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[BusinessType]"
-                      dataType="wstr"
-                      length="20"
-                      name="BusinessType" />
-                    <externalMetadataColumn
                       refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[StoreName]"
                       dataType="wstr"
                       length="50"
                       name="StoreName" />
                     <externalMetadataColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[BusinessType]"
+                      dataType="wstr"
+                      length="20"
+                      name="BusinessType" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[Specialty]"
+                      dataType="wstr"
+                      length="255"
+                      name="Specialty" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[BankName]"
+                      dataType="wstr"
+                      length="255"
+                      name="BankName" />
+                    <externalMetadataColumn
                       refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[AnnualSales]"
                       dataType="cy"
                       name="AnnualSales" />
                     <externalMetadataColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[AnnualRevenue]"
+                      dataType="cy"
+                      name="AnnualRevenue" />
+                    <externalMetadataColumn
                       refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[YearOpened]"
                       dataType="i4"
                       name="YearOpened" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[NumberEmployees]"
+                      dataType="i4"
+                      name="NumberEmployees" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Add new Store.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
+                      dataType="i4"
+                      name="GeographyKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -283,7 +337,7 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@startRow:Input",{CE63E716-DC79-4C14-A145-532A78161927};"@endRow:Input",{EA43FC34-A772-4C2F-923B-10008317E2D3};</property>
+                  name="ParameterMapping">"@startRow:Input",{02FAE864-E17F-44B9-9DF3-4412A4AEA51C};"@endRow:Input",{EE60D838-41AE-49A8-A42A-BB2A04F51CAF};</property>
               </properties>
               <connections>
                 <connection
@@ -338,15 +392,6 @@
                       name="Specialty"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[YearOpened]"
-                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]"
-                      name="YearOpened"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[BankName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -355,15 +400,6 @@
                       length="255"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[BankName]"
                       name="BankName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[NumberEmployees]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[NumberEmployees]"
-                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[NumberEmployees]"
-                      name="NumberEmployees"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[AnnualSales]"
@@ -382,6 +418,33 @@
                       externalMetadataColumnId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[AnnualRevenue]"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[AnnualRevenue]"
                       name="AnnualRevenue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[NumberEmployees]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[NumberEmployees]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[NumberEmployees]"
+                      name="NumberEmployees"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[YearOpened]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]"
+                      name="YearOpened"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceID]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceID]"
+                      name="StateProvinceID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -406,18 +469,10 @@
                       length="255"
                       name="Specialty" />
                     <externalMetadataColumn
-                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[YearOpened]"
-                      dataType="i4"
-                      name="YearOpened" />
-                    <externalMetadataColumn
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[BankName]"
                       dataType="wstr"
                       length="255"
                       name="BankName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[NumberEmployees]"
-                      dataType="i4"
-                      name="NumberEmployees" />
                     <externalMetadataColumn
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[AnnualSales]"
                       dataType="i4"
@@ -426,6 +481,18 @@
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[AnnualRevenue]"
                       dataType="i4"
                       name="AnnualRevenue" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[NumberEmployees]"
+                      dataType="i4"
+                      name="NumberEmployees" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[YearOpened]"
+                      dataType="i4"
+                      name="YearOpened" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceID]"
+                      dataType="i4"
+                      name="StateProvinceID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -457,21 +524,11 @@
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[Specialty]"
                       name="Specialty" />
                     <outputColumn
-                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[YearOpened]"
-                      dataType="i4"
-                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[YearOpened]"
-                      name="YearOpened" />
-                    <outputColumn
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[BankName]"
                       dataType="wstr"
                       length="255"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[BankName]"
                       name="BankName" />
-                    <outputColumn
-                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[NumberEmployees]"
-                      dataType="i4"
-                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[NumberEmployees]"
-                      name="NumberEmployees" />
                     <outputColumn
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[AnnualSales]"
                       dataType="i4"
@@ -482,6 +539,21 @@
                       dataType="i4"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[AnnualRevenue]"
                       name="AnnualRevenue" />
+                    <outputColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[NumberEmployees]"
+                      dataType="i4"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[NumberEmployees]"
+                      name="NumberEmployees" />
+                    <outputColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[YearOpened]"
+                      dataType="i4"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[YearOpened]"
+                      name="YearOpened" />
+                    <outputColumn
+                      refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[StateProvinceID]"
+                      dataType="i4"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[StateProvinceID]"
+                      name="StateProvinceID" />
                     <outputColumn
                       refId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -592,17 +664,49 @@
                       externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[BusinessType]"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[BusinessType]" />
                     <inputColumn
-                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[YearOpened]"
-                      cachedDataType="i4"
-                      cachedName="YearOpened"
-                      externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[YearOpened]"
-                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]" />
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[Specialty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Specialty"
+                      externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[Specialty]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[Specialty]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[BankName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BankName"
+                      externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[BankName]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[BankName]" />
                     <inputColumn
                       refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[AnnualSales]"
                       cachedDataType="i4"
                       cachedName="AnnualSales"
                       externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[AnnualSales]"
                       lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[AnnualSales]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[AnnualRevenue]"
+                      cachedDataType="i4"
+                      cachedName="AnnualRevenue"
+                      externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[AnnualRevenue]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[AnnualRevenue]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[NumberEmployees]"
+                      cachedDataType="i4"
+                      cachedName="NumberEmployees"
+                      externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[NumberEmployees]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[NumberEmployees]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[YearOpened]"
+                      cachedDataType="i4"
+                      cachedName="YearOpened"
+                      externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[YearOpened]"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[YearOpened]" />
+                    <inputColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[GeographyKey]"
+                      cachedDataType="i4"
+                      cachedName="GeographyKey"
+                      externalMetadataColumnId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
+                      lineageId="Package\Add new Store\Lookup Geography.Outputs[Lookup Match Output].Columns[GeographyKey]" />
                     <inputColumn
                       refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].Columns[StoreKey]"
                       cachedDataType="i4"
@@ -621,23 +725,45 @@
                       dataType="i4"
                       name="StoreID" />
                     <externalMetadataColumn
-                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[BusinessType]"
-                      dataType="wstr"
-                      length="20"
-                      name="BusinessType" />
-                    <externalMetadataColumn
                       refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[StoreName]"
                       dataType="wstr"
                       length="50"
                       name="StoreName" />
                     <externalMetadataColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[BusinessType]"
+                      dataType="wstr"
+                      length="20"
+                      name="BusinessType" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[Specialty]"
+                      dataType="wstr"
+                      length="255"
+                      name="Specialty" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[BankName]"
+                      dataType="wstr"
+                      length="255"
+                      name="BankName" />
+                    <externalMetadataColumn
                       refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[AnnualSales]"
                       dataType="cy"
                       name="AnnualSales" />
                     <externalMetadataColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[AnnualRevenue]"
+                      dataType="cy"
+                      name="AnnualRevenue" />
+                    <externalMetadataColumn
                       refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[YearOpened]"
                       dataType="i4"
                       name="YearOpened" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[NumberEmployees]"
+                      dataType="i4"
+                      name="NumberEmployees" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
+                      dataType="i4"
+                      name="GeographyKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -718,7 +844,7 @@ where [refTable].[StoreID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StoreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BusinessType" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AnnualSales" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearOpened" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StoreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BusinessType" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Specialty" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BankName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AnnualSales" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AnnualRevenue" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearOpened" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumberEmployees" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -823,10 +949,173 @@ where [refTable].[StoreID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Add new Store\Lookup Geography"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Geography"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimGeography]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimGeography]) [refTable]
+where [refTable].[GeographyID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GeographyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add new Store\Lookup Geography.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESTINATION.AWDW-G1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add new Store\Lookup Geography.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add new Store\Lookup Geography.Inputs[Lookup Input].Columns[StateProvinceID]"
+                      cachedDataType="i4"
+                      cachedName="StateProvinceID"
+                      lineageId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output].Columns[StateProvinceID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">GeographyID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add new Store\Lookup Geography.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Add new Store\Lookup Geography.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add new Store\Lookup Geography.Outputs[Lookup Match Output].Columns[GeographyKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Add new Store\Lookup Geography.Outputs[Lookup Match Output].Columns[GeographyKey]"
+                      name="GeographyKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">GeographyKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add new Store\Lookup Geography.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Add new Store\Lookup Geography.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add new Store\Lookup Geography.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Add new Store\Lookup Geography.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add new Store\Lookup Geography.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add new Store\Lookup Geography.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add new Store\Lookup Geography.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add new Store\Lookup Geography.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Add new Store.Paths[Lookup Match Output]"
+              endId="Package\Add new Store\Lookup.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Add new Store\Lookup Geography.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Add new Store.Paths[Lookup Match Output1]"
               endId="Package\Add new Store\Load the staging area.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
               startId="Package\Add new Store\Lookup.Outputs[Lookup Match Output]" />
@@ -837,7 +1126,7 @@ where [refTable].[StoreID] = ?</property>
               startId="Package\Add new Store\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Add new Store.Paths[OLE DB Source Output]"
-              endId="Package\Add new Store\Lookup.Inputs[Lookup Input]"
+              endId="Package\Add new Store\Lookup Geography.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Add new Store\Get row changes.Outputs[OLE DB Source Output]" />
           </paths>
@@ -848,7 +1137,7 @@ where [refTable].[StoreID] = ?</property>
       DTS:refId="Package\Clean the staging area"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D7089628-4686-42A8-B32B-4224D6962B83}"
+      DTS:DTSID="{ABA4BF71-ECED-4C7F-8140-4CD5D83228D4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Clean the staging area"
@@ -857,7 +1146,7 @@ where [refTable].[StoreID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8D7F704B-D612-4FDA-B2D5-975867C18992}"
+          SQLTask:Connection="{86A221B3-46FD-4152-8BC0-29C4840D27B1}"
           SQLTask:SqlStatementSource="Truncate Table [Staging].[Store]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -865,7 +1154,7 @@ where [refTable].[StoreID] = ?</property>
       DTS:refId="Package\Get DataBase Row Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{86E81325-E9E8-49B6-8CCB-8FD1A5EBE800}"
+      DTS:DTSID="{B513554C-9CA6-455D-8EAF-65A349C39BD8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get DataBase Row Version"
@@ -874,7 +1163,7 @@ where [refTable].[StoreID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{54B81434-E1E4-4417-8C1D-4250AD893348}"
+          SQLTask:Connection="{7B33DB3A-4D86-4AD7-A086-91C72462C7E3}"
           SQLTask:SqlStatementSource="EXECUTE  [dbo].[GetDatabaseRowVersion] "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -887,7 +1176,7 @@ where [refTable].[StoreID] = ?</property>
       DTS:refId="Package\Get Store Row Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E854EC95-603A-465C-88A1-092B3E1661D4}"
+      DTS:DTSID="{48AB0F37-2CE6-41F8-AF94-B0F508334A25}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Store Row Version"
@@ -896,7 +1185,7 @@ where [refTable].[StoreID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8D7F704B-D612-4FDA-B2D5-975867C18992}"
+          SQLTask:Connection="{86A221B3-46FD-4152-8BC0-29C4840D27B1}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName= 'Store'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -909,7 +1198,7 @@ where [refTable].[StoreID] = ?</property>
       DTS:refId="Package\Sync Store data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{B171B598-7949-422A-BB99-E687459A961C}"
+      DTS:DTSID="{8F74B162-CC92-4DCC-A0F2-82CFD5F44998}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sync Store data"
@@ -918,24 +1207,24 @@ where [refTable].[StoreID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8D7F704B-D612-4FDA-B2D5-975867C18992}"
-          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimStore]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{86A221B3-46FD-4152-8BC0-29C4840D27B1}"
+          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimGeography]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Update Store Row version"
+      DTS:refId="Package\Update Store  Row version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{F05EAB90-9272-46D3-B763-2DBF57B933A7}"
+      DTS:DTSID="{23737220-C2E2-4559-A79B-6CCB75273B97}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Update Store Row version"
+      DTS:ObjectName="Update Store  Row version"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8D7F704B-D612-4FDA-B2D5-975867C18992}"
+          SQLTask:Connection="{86A221B3-46FD-4152-8BC0-29C4840D27B1}"
           SQLTask:SqlStatementSource="Execute [dbo].[UpdateLastPackageRowVersion] @tableName='Store', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -951,7 +1240,7 @@ where [refTable].[StoreID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{81565EB9-767F-4CC6-BD9F-8D3357920A24}"
+      DTS:DTSID="{642C4C6D-F2FC-4F7A-AC24-3524F6C6C7AD}"
       DTS:From="Package\Get DataBase Row Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -959,7 +1248,7 @@ where [refTable].[StoreID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{AC5488F3-FE35-488A-846F-4CCE4CCE1E94}"
+      DTS:DTSID="{D40134CC-3EDE-4628-953A-27D65DEBC180}"
       DTS:From="Package\Get Store Row Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -967,7 +1256,7 @@ where [refTable].[StoreID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{CC65D589-5650-4EA3-BCD8-38724643F6CB}"
+      DTS:DTSID="{5FC1D6DA-A0AF-41C0-95F6-C7FC6832FFC5}"
       DTS:From="Package\Clean the staging area"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -975,7 +1264,7 @@ where [refTable].[StoreID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{4968F3F9-E3F2-4C89-ABEF-56A58425CFAD}"
+      DTS:DTSID="{D47CF3C3-FD95-4B3F-B3CE-0A5DDEC310D1}"
       DTS:From="Package\Add new Store"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -983,11 +1272,11 @@ where [refTable].[StoreID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{D8BF1B7F-258A-4DE0-A1F7-AB3D618837C7}"
+      DTS:DTSID="{05FE0948-3E50-4B94-927D-F8A0CB564311}"
       DTS:From="Package\Sync Store data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Update Store Row version" />
+      DTS:To="Package\Update Store  Row version" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1002,55 +1291,55 @@ where [refTable].[StoreID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147,42"
+          Size="151,42"
           Id="Package\Add new Store"
-          TopLeft="252.214286583267,256.426470269677" />
+          TopLeft="249.357143720042,257.19117615136" />
         <NodeLayout
           Size="196,42"
           Id="Package\Clean the staging area"
-          TopLeft="176.392857586471,186.441176216881" />
+          TopLeft="173.535714723246,186.441176216881" />
         <NodeLayout
           Size="224,42"
           Id="Package\Get DataBase Row Version"
           TopLeft="13.85714322511,38.588235198936" />
         <NodeLayout
-          Size="185,42"
+          Size="191,42"
           Id="Package\Get Store Row Version"
           TopLeft="82.928571788175,110.470588065709" />
         <NodeLayout
-          Size="153,42"
+          Size="157,42"
           Id="Package\Sync Store data"
-          TopLeft="334.571429866918,325.808823153543" />
+          TopLeft="332.428572719499,326.573529035226" />
         <NodeLayout
-          Size="201,42"
-          Id="Package\Update Store Row version"
+          Size="210,42"
+          Id="Package\Update Store  Row version"
           TopLeft="407.928572990913,397.499999572687" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="125.85714322511,80.188235198936">
+          TopLeft="125.85714322511,80.588235198936">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.471428563065,30.282352866773"
+              EndConnector="52.571428563065,29.882352866773"
               Start="0,0"
-              End="49.471428563065,22.782352866773">
+              End="52.571428563065,22.382352866773">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.1411764333865" />
+                    End="0,10.9411764333865" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.1411764333865"
-                    Point2="0,15.1411764333865"
-                    Point3="4,15.1411764333865" />
+                    Point1="0,10.9411764333865"
+                    Point2="0,14.9411764333865"
+                    Point3="4,14.9411764333865" />
                   <mssgle:LineSegment
-                    End="45.471428563065,15.1411764333865" />
+                    End="48.571428563065,14.9411764333865" />
                   <mssgle:CubicBezierSegment
-                    Point1="45.471428563065,15.1411764333865"
-                    Point2="49.471428563065,15.1411764333865"
-                    Point3="49.471428563065,19.1411764333865" />
+                    Point1="48.571428563065,14.9411764333865"
+                    Point2="52.571428563065,14.9411764333865"
+                    Point3="52.571428563065,18.9411764333865" />
                   <mssgle:LineSegment
-                    End="49.471428563065,22.782352866773" />
+                    End="52.571428563065,22.382352866773" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1061,30 +1350,30 @@ where [refTable].[StoreID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="175.328571788175,152.070588065709">
+          TopLeft="178.428571788175,152.470588065709">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="99.0642857982959,34.370588151172"
+              EndConnector="93.107142935071,33.970588151172"
               Start="0,0"
-              End="99.0642857982959,26.870588151172">
+              End="93.107142935071,26.470588151172">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.185294075586" />
+                    End="0,12.985294075586" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.185294075586"
-                    Point2="0,17.185294075586"
-                    Point3="4,17.185294075586" />
+                    Point1="0,12.985294075586"
+                    Point2="0,16.985294075586"
+                    Point3="4,16.985294075586" />
                   <mssgle:LineSegment
-                    End="95.0642857982959,17.185294075586" />
+                    End="89.107142935071,16.985294075586" />
                   <mssgle:CubicBezierSegment
-                    Point1="95.0642857982959,17.185294075586"
-                    Point2="99.0642857982959,17.185294075586"
-                    Point3="99.0642857982959,21.185294075586" />
+                    Point1="89.107142935071,16.985294075586"
+                    Point2="93.107142935071,16.985294075586"
+                    Point3="93.107142935071,20.985294075586" />
                   <mssgle:LineSegment
-                    End="99.0642857982959,26.870588151172" />
+                    End="93.107142935071,26.470588151172" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1095,30 +1384,30 @@ where [refTable].[StoreID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="274.392857586471,228.041176216881">
+          TopLeft="271.535714723246,228.441176216881">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51.4214289967962,28.3852940527964"
+              EndConnector="53.321428996796,28.749999934479"
               Start="0,0"
-              End="51.4214289967962,20.8852940527964">
+              End="53.321428996796,21.249999934479">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.1926470263982" />
+                    End="0,10.3749999672395" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.1926470263982"
-                    Point2="0,14.1926470263982"
-                    Point3="4,14.1926470263982" />
+                    Point1="0,10.3749999672395"
+                    Point2="0,14.3749999672395"
+                    Point3="4,14.3749999672395" />
                   <mssgle:LineSegment
-                    End="47.4214289967962,14.1926470263982" />
+                    End="49.321428996796,14.3749999672395" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.4214289967962,14.1926470263982"
-                    Point2="51.4214289967962,14.1926470263982"
-                    Point3="51.4214289967962,18.1926470263982" />
+                    Point1="49.321428996796,14.3749999672395"
+                    Point2="53.321428996796,14.3749999672395"
+                    Point3="53.321428996796,18.3749999672395" />
                   <mssgle:LineSegment
-                    End="51.4214289967962,20.8852940527964" />
+                    End="53.321428996796,21.249999934479" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1129,30 +1418,30 @@ where [refTable].[StoreID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="325.814286583267,298.026470269677">
+          TopLeft="324.857143720042,299.19117615136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85.1571432836506,27.7823528838659"
+              EndConnector="86.071428999457,27.382352883866"
               Start="0,0"
-              End="85.1571432836506,20.2823528838659">
+              End="86.071428999457,19.882352883866">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.89117644193294" />
+                    End="0,9.69117644193298" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.89117644193294"
-                    Point2="0,13.8911764419329"
-                    Point3="4,13.8911764419329" />
+                    Point1="0,9.69117644193298"
+                    Point2="0,13.691176441933"
+                    Point3="4,13.691176441933" />
                   <mssgle:LineSegment
-                    End="81.1571432836506,13.8911764419329" />
+                    End="82.071428999457,13.691176441933" />
                   <mssgle:CubicBezierSegment
-                    Point1="81.1571432836506,13.8911764419329"
-                    Point2="85.1571432836506,13.8911764419329"
-                    Point3="85.1571432836506,17.8911764419329" />
+                    Point1="82.071428999457,13.691176441933"
+                    Point2="86.071428999457,13.691176441933"
+                    Point3="86.071428999457,17.691176441933" />
                   <mssgle:LineSegment
-                    End="85.1571432836506,20.2823528838659" />
+                    End="86.071428999457,19.882352883866" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1163,30 +1452,30 @@ where [refTable].[StoreID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="410.971429866918,367.408823153543">
+          TopLeft="410.928572719499,368.573529035226">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="97.3571431239952,30.0911764191437"
+              EndConnector="102.000000271414,28.926470537461"
               Start="0,0"
-              End="97.3571431239952,22.5911764191437">
+              End="102.000000271414,21.426470537461">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.0455882095718" />
+                    End="0,10.4632352687305" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.0455882095718"
-                    Point2="0,15.0455882095718"
-                    Point3="4,15.0455882095718" />
+                    Point1="0,10.4632352687305"
+                    Point2="0,14.4632352687305"
+                    Point3="4,14.4632352687305" />
                   <mssgle:LineSegment
-                    End="93.3571431239952,15.0455882095718" />
+                    End="98.0000002714139,14.4632352687305" />
                   <mssgle:CubicBezierSegment
-                    Point1="93.3571431239952,15.0455882095718"
-                    Point2="97.3571431239952,15.0455882095718"
-                    Point3="97.3571431239952,19.0455882095718" />
+                    Point1="98.0000002714139,14.4632352687305"
+                    Point2="102.000000271414,14.4632352687305"
+                    Point3="102.000000271414,18.4632352687305" />
                   <mssgle:LineSegment
-                    End="97.3571431239952,22.5911764191437" />
+                    End="102.000000271414,21.426470537461" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1202,37 +1491,89 @@ where [refTable].[StoreID] = ?</property>
     design-time-name="Package\Add new Store">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Add new Store\Lookup"
-          TopLeft="577.999991387129,301.999995499849" />
+          Size="172,42"
+          Id="Package\Add new Store\Lookup Geography"
+          TopLeft="199,183" />
         <NodeLayout
-          Size="158.4,41.6"
+          Size="162,42"
           Id="Package\Add new Store\Get row changes"
-          TopLeft="555.571421039043,192.764703110067" />
+          TopLeft="195,102" />
         <NodeLayout
-          Size="147.2,41.6"
+          Size="115,42"
+          Id="Package\Add new Store\Lookup"
+          TopLeft="201,275" />
+        <NodeLayout
+          Size="151,42"
           Id="Package\Add new Store\Add new Store"
-          TopLeft="745.999988883734,442.999993398786" />
+          TopLeft="342,405" />
         <NodeLayout
-          Size="180.8,41.6"
+          Size="185,42"
           Id="Package\Add new Store\Load the staging area"
-          TopLeft="431.999993562699,422.999993696809" />
+          TopLeft="94,393" />
         <EdgeLayout
-          Id="Package\Add new Store.Paths[OLE DB Source Output]"
-          TopLeft="634.585706213086,234.364703110067">
+          Id="Package\Add new Store.Paths[Lookup Match Output]"
+          TopLeft="285,225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.6352923897823"
+              EndConnector="-26.5,50"
               Start="0,0"
-              End="0,60.1352923897823">
+              End="-26.5,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.1352923897823" />
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-22.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,25"
+                    Point2="-26.5,25"
+                    Point3="-26.5,29" />
+                  <mssgle:LineSegment
+                    End="-26.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-61.44138671875,30,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Store.Paths[OLE DB Source Output]"
+          TopLeft="276,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,39"
+              Start="0,0"
+              End="9,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="5,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,19.5"
+                    Point2="9,19.5"
+                    Point3="9,23.5" />
+                  <mssgle:LineSegment
+                    End="9,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1243,73 +1584,73 @@ where [refTable].[StoreID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Add new Store.Paths[Lookup No Match Output]"
-          TopLeft="651.866658053796,343.599995499849">
+          TopLeft="276.333333333333,317">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="167.733330829938,99.399997898937"
+              EndConnector="141.166666666667,88"
               Start="0,0"
-              End="167.733330829938,91.899997898937">
+              End="141.166666666667,80.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5941250160693" />
+                    End="0,31.9245283018868" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.5941250160693"
-                    Point2="0,40.5941250160693"
-                    Point3="4,40.5941250160693" />
+                    Point1="0,31.9245283018868"
+                    Point2="0,35.9245283018868"
+                    Point3="4,35.9245283018868" />
                   <mssgle:LineSegment
-                    End="163.733330829938,40.5941250160693" />
+                    End="137.166666666667,35.9245283018868" />
                   <mssgle:CubicBezierSegment
-                    Point1="163.733330829938,40.5941250160693"
-                    Point2="167.733330829938,40.5941250160693"
-                    Point3="167.733330829938,44.5941250160693" />
+                    Point1="137.166666666667,35.9245283018868"
+                    Point2="141.166666666667,35.9245283018868"
+                    Point3="141.166666666667,39.9245283018868" />
                   <mssgle:LineSegment
-                    End="167.733330829938,91.899997898937" />
+                    End="141.166666666667,80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.0602786962192,45.5941250160693,111.6127734375,11.609375"
+              BoundingBox="14.7769466145833,40.9245283018868,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Add new Store.Paths[Lookup Match Output]"
-          TopLeft="616.933324720462,343.599995499849">
+          Id="Package\Add new Store.Paths[Lookup Match Output1]"
+          TopLeft="240.666666666667,317">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-94.5333311577632,79.39999819696"
+              EndConnector="-54.1666666666667,76"
               Start="0,0"
-              End="-94.5333311577632,71.89999819696">
+              End="-54.1666666666667,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.4262929699473" />
+                    End="0,27.0257289879931" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.4262929699473"
-                    Point2="0,32.4262929699473"
-                    Point3="-4,32.4262929699473" />
+                    Point1="0,27.0257289879931"
+                    Point2="0,31.0257289879931"
+                    Point3="-4,31.0257289879931" />
                   <mssgle:LineSegment
-                    End="-90.5333311577632,32.4262929699473" />
+                    End="-50.1666666666667,31.0257289879931" />
                   <mssgle:CubicBezierSegment
-                    Point1="-90.5333311577632,32.4262929699473"
-                    Point2="-94.5333311577632,32.4262929699473"
-                    Point3="-94.5333311577632,36.4262929699473" />
+                    Point1="-50.1666666666667,31.0257289879931"
+                    Point2="-54.1666666666667,31.0257289879931"
+                    Point3="-54.1666666666667,35.0257289879931" />
                   <mssgle:LineSegment
-                    End="-94.5333311577632,71.89999819696" />
+                    End="-54.1666666666667,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.4580522976316,37.4262929699473,96.3827734375,11.609375"
+              BoundingBox="-75.2747200520833,36.0257289879931,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1317,38 +1658,25 @@ where [refTable].[StoreID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new Store\Lookup">
+    design-time-name="Package\Add new Store\Lookup Geography">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimStore]</Value>
+          type="q3:string">[dbo].[DimGeography]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add new Store\Load the staging area">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1361,7 +1689,43 @@ where [refTable].[StoreID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Add new Store\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimStore]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Add new Store\Add new Store">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Store\Load the staging area">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

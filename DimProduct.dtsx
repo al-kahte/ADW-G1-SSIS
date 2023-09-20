@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimProduct"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{178BE4C3-A931-475C-A4D5-12623A1E5543}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{A1EDC895-3C15-47BB-9614-F99F1A5AF572}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -284,12 +284,12 @@
                       externalMetadataColumnId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
                       lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[EndDate]" />
                     <inputColumn
-                      refId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].Columns[Status_unicode]"
+                      refId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].Columns[Status]"
                       cachedDataType="wstr"
-                      cachedLength="25"
-                      cachedName="Status_unicode"
+                      cachedLength="20"
+                      cachedName="Status"
                       externalMetadataColumnId="Package\Add new Product\Add new Product.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]" />
+                      lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -414,84 +414,6 @@
                       refId="Package\Add new Product\Add new Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Add new Product\Add new Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Add new Product\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input].Columns[Status]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="12"
-                      cachedName="Status"
-                      lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="25"
-                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]"
-                      name="Status_unicode"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -757,12 +679,11 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[Status]"
-                      length="12"
+                      length="20"
                       lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]"
                       name="Status"
                       truncationRowDisposition="FailComponent" />
@@ -866,9 +787,8 @@
                       name="EndDate" />
                     <externalMetadataColumn
                       refId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[Status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="12"
+                      dataType="wstr"
+                      length="20"
                       name="Status" />
                   </externalMetadataColumns>
                 </output>
@@ -994,9 +914,8 @@
                       name="EndDate" />
                     <outputColumn
                       refId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Error Output].Columns[Status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="12"
+                      dataType="wstr"
+                      length="20"
                       lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Error Output].Columns[Status]"
                       name="Status" />
                     <outputColumn
@@ -1224,18 +1143,18 @@
                       externalMetadataColumnId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
                       lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[EndDate]" />
                     <inputColumn
+                      refId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
                       refId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].Columns[ProductKey]"
                       cachedDataType="i4"
                       cachedName="ProductKey"
                       externalMetadataColumnId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
                       lineageId="Package\Add new Product\Lookup.Outputs[Lookup Match Output].Columns[ProductKey]" />
-                    <inputColumn
-                      refId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].Columns[Status_unicode]"
-                      cachedDataType="wstr"
-                      cachedLength="25"
-                      cachedName="Status_unicode"
-                      externalMetadataColumnId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output].Columns[Status_unicode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1419,7 +1338,7 @@ where [refTable].[ProductID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductNumber" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Category" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subcategory" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ModelName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MakeFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FinishedGoodsFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Color" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SafetyStockLevel" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReorderPoint" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StandardCost" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ListPrice" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DealerPrice" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="DaysToManufacture" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductLine" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Class" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Style" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductNumber" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Category" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subcategory" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ModelName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MakeFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FinishedGoodsFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Color" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SafetyStockLevel" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReorderPoint" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StandardCost" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ListPrice" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DealerPrice" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="DaysToManufacture" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductLine" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Class" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Style" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1527,11 +1446,6 @@ where [refTable].[ProductID] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Add new Product.Paths[Data Conversion Output]"
-              endId="Package\Add new Product\Lookup.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\Add new Product\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\Add new Product.Paths[Lookup Match Output]"
               endId="Package\Add new Product\Load the staging area.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
@@ -1543,7 +1457,7 @@ where [refTable].[ProductID] = ?</property>
               startId="Package\Add new Product\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Add new Product.Paths[OLE DB Source Output]"
-              endId="Package\Add new Product\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\Add new Product\Lookup.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Add new Product\Get row changes.Outputs[OLE DB Source Output]" />
           </paths>
@@ -1908,159 +1822,120 @@ where [refTable].[ProductID] = ?</property>
     design-time-name="Package\Add new Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="185,42"
-          Id="Package\Add new Product\Load the staging area"
-          TopLeft="362.999993562699,384.999993696809" />
-        <NodeLayout
-          Size="166,42"
+          Size="162,42"
           Id="Package\Add new Product\Get row changes"
-          TopLeft="493.999992460012,90.999997228384" />
+          TopLeft="142,115" />
         <NodeLayout
-          Size="156,42"
+          Size="115,42"
           Id="Package\Add new Product\Lookup"
-          TopLeft="494.999991387129,270.999995499849" />
+          TopLeft="159,197" />
         <NodeLayout
           Size="163,42"
           Id="Package\Add new Product\Add new Product"
-          TopLeft="616.999988883734,390.999993398786" />
+          TopLeft="255,326" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Add new Product\Load the staging area"
+          TopLeft="37,323" />
         <EdgeLayout
-          Id="Package\Add new Product.Paths[Lookup No Match Output]"
-          TopLeft="597.666658053796,312.999995499849">
+          Id="Package\Add new Product.Paths[OLE DB Source Output]"
+          TopLeft="219.75,157">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100.833330829938,77.999997898937"
+              EndConnector="0,40"
               Start="0,0"
-              End="100.833330829938,70.499997898937">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.6751260503298" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.6751260503298"
-                    Point2="0,31.6751260503298"
-                    Point3="4,31.6751260503298" />
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Product.Paths[Lookup No Match Output]"
+          TopLeft="234.333333333333,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.166666666667,87"
+              Start="0,0"
+              End="102.166666666667,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="96.8333308299384,31.6751260503298" />
+                    End="0,31.516295025729" />
                   <mssgle:CubicBezierSegment
-                    Point1="96.8333308299384,31.6751260503298"
-                    Point2="100.833330829938,31.6751260503298"
-                    Point3="100.833330829938,35.6751260503298" />
+                    Point1="0,31.516295025729"
+                    Point2="0,35.516295025729"
+                    Point3="4,35.516295025729" />
                   <mssgle:LineSegment
-                    End="100.833330829938,70.499997898937" />
+                    End="98.1666666666667,35.516295025729" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.1666666666667,35.516295025729"
+                    Point2="102.166666666667,35.516295025729"
+                    Point3="102.166666666667,39.516295025729" />
+                  <mssgle:LineSegment
+                    End="102.166666666667,79.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-5.3897213037808,36.6751260503298,111.6127734375,11.609375"
+              BoundingBox="-4.72305338541666,40.516295025729,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Add new Product.Paths[Lookup Match Output]"
-          TopLeft="548.333324720462,312.999995499849">
+          TopLeft="198.666666666667,239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.8333311577633,71.99999819696"
+              EndConnector="-69.1666666666667,84"
               Start="0,0"
-              End="-92.8333311577633,64.49999819696">
+              End="-69.1666666666667,76.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.2385779480041" />
+                    End="0,30.2915951972556" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.2385779480041"
-                    Point2="0,29.2385779480041"
-                    Point3="-4,29.2385779480041" />
+                    Point1="0,30.2915951972556"
+                    Point2="0,34.2915951972556"
+                    Point3="-4,34.2915951972556" />
                   <mssgle:LineSegment
-                    End="-88.8333311577633,29.2385779480041" />
+                    End="-65.1666666666667,34.2915951972556" />
                   <mssgle:CubicBezierSegment
-                    Point1="-88.8333311577633,29.2385779480041"
-                    Point2="-92.8333311577633,29.2385779480041"
-                    Point3="-92.8333311577633,33.2385779480041" />
+                    Point1="-65.1666666666667,34.2915951972556"
+                    Point2="-69.1666666666667,34.2915951972556"
+                    Point3="-69.1666666666667,38.2915951972556" />
                   <mssgle:LineSegment
-                    End="-92.8333311577633,64.49999819696" />
+                    End="-69.1666666666667,76.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-94.6080522976317,34.2385779480041,96.3827734375,11.609375"
+              BoundingBox="-82.7747200520833,39.2915951972556,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Add new Product\Data Conversion"
-          TopLeft="498,174" />
-        <EdgeLayout
-          Id="Package\Add new Product.Paths[OLE DB Source Output]"
-          TopLeft="577.749996230006,132.999997228384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.000002771616"
-              Start="0,0"
-              End="0,33.500002771616">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.500002771616" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add new Product.Paths[Data Conversion Output]"
-          TopLeft="575.749995693564,216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.999995499849"
-              Start="0,0"
-              End="0,47.499995499849">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.499995499849" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add new Product\Load the staging area">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Add new Product\Get row changes">
     <Properties>
@@ -2094,6 +1969,19 @@ where [refTable].[ProductID] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Add new Product\Add new Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Product\Load the staging area">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

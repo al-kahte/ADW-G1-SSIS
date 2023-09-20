@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSalesTerritory"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{1DCC6DDD-D5D5-42D3-87BF-A39177D05361}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{4391AFC6-589C-403E-99AF-9EB8E1DE00A0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1095,7 +1095,7 @@ where [refTable].[SalesTerritoryID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181,42"
+          Size="185,42"
           Id="Package\Add New SalesTerritory\Load the staging area"
           TopLeft="431.999993562699,422.999993696809" />
         <NodeLayout
@@ -1109,41 +1109,27 @@ where [refTable].[SalesTerritoryID] = ?</property>
         <NodeLayout
           Size="158,42"
           Id="Package\Add New SalesTerritory\Get row changes"
-          TopLeft="505.999992460012,185.999997228384" />
+          TopLeft="565.999992460012,190.999997228384" />
         <EdgeLayout
           Id="Package\Add New SalesTerritory.Paths[OLE DB Source Output]"
-          TopLeft="584.999992460012,227.999997228384">
+          TopLeft="647.49999192357,232.999997228384">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.999998927117,73.999998271465"
+              EndConnector="0,68.999998271465"
               Start="0,0"
-              End="64.999998927117,66.499998271465">
+              End="0,61.499998271465">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.9999991357325" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.9999991357325"
-                    Point2="0,36.9999991357325"
-                    Point3="4,36.9999991357325" />
-                  <mssgle:LineSegment
-                    End="60.999998927117,36.9999991357325" />
-                  <mssgle:CubicBezierSegment
-                    Point1="60.999998927117,36.9999991357325"
-                    Point2="64.999998927117,36.9999991357325"
-                    Point3="64.999998927117,40.9999991357325" />
-                  <mssgle:LineSegment
-                    End="64.999998927117,66.499998271465" />
+                    End="0,61.499998271465" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1178,7 +1164,7 @@ where [refTable].[SalesTerritoryID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="22.6102786962192,37.1208782666008,111.6127734375,11.609375"
+              BoundingBox="22.610278696219,37.1208782666008,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1188,9 +1174,9 @@ where [refTable].[SalesTerritoryID] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104.833331157763,78.99999819696"
+              EndConnector="-102.833331157763,78.99999819696"
               Start="0,0"
-              End="-104.833331157763,71.49999819696">
+              End="-102.833331157763,71.49999819696">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1201,20 +1187,20 @@ where [refTable].[SalesTerritoryID] = ?</property>
                     Point2="0,32.120878387775"
                     Point3="-4,32.120878387775" />
                   <mssgle:LineSegment
-                    End="-100.833331157763,32.120878387775" />
+                    End="-98.8333311577633,32.120878387775" />
                   <mssgle:CubicBezierSegment
-                    Point1="-100.833331157763,32.120878387775"
-                    Point2="-104.833331157763,32.120878387775"
-                    Point3="-104.833331157763,36.120878387775" />
+                    Point1="-98.8333311577633,32.120878387775"
+                    Point2="-102.833331157763,32.120878387775"
+                    Point3="-102.833331157763,36.120878387775" />
                   <mssgle:LineSegment
-                    End="-104.833331157763,71.49999819696" />
+                    End="-102.833331157763,71.49999819696" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-100.608052297632,37.120878387775,96.3827734375,11.609375"
+              BoundingBox="-99.6080522976316,37.120878387775,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
