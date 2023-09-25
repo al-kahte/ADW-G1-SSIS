@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimStore"
   DTS:PackageType="5"
-  DTS:VersionBuild="98"
-  DTS:VersionGUID="{C9B9955F-4DC3-4F22-8042-A81F7CDD080A}">
+  DTS:VersionBuild="100"
+  DTS:VersionGUID="{BD543415-906E-4212-B125-B17AF64A25EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2576,7 +2576,7 @@ where [refTable].[StoreAlternateKey] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E57888CA-9B49-4923-9409-DF665181D6FB}"
-          SQLTask:SqlStatementSource="Execute [dbo].[UpdateLastPackageRowVersion] @tableName='Store', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="Execute [dbo].[UpdateLastPackageRowVersion] @tableName='Order', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::DBTSValue"
@@ -2630,12 +2630,12 @@ where [refTable].[StoreAlternateKey] = ?</property>
       DTS:To="Package\Update Orders Row version" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -2844,25 +2844,13 @@ where [refTable].[StoreAlternateKey] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Add new Orders\Lookup Currency"
-          TopLeft="187,83" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Add new Orders\Lookup Sales Territory"
-          TopLeft="183,359" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Add new Orders\Lookup Product"
-          TopLeft="196,170" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Add new Orders\Lookup Promotion"
-          TopLeft="191,264" />
-        <NodeLayout
           Size="162,42"
           Id="Package\Add new Orders\Get row changes"
           TopLeft="185,6" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Add new Orders\Lookup Currency"
+          TopLeft="187,83" />
         <NodeLayout
           Size="152,42"
           Id="Package\Add new Orders\Lookup Orders"
@@ -2871,54 +2859,30 @@ where [refTable].[StoreAlternateKey] = ?</property>
           Size="176,42"
           Id="Package\Add new Orders\Lookup Store"
           TopLeft="190,448" />
-        <EdgeLayout
-          Id="Package\Add new Orders.Paths[Lookup Match Output1]"
-          TopLeft="276.5,306">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add new Orders.Paths[Lookup Match Output]"
-          TopLeft="274.5,212">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Add new Orders\Lookup Product"
+          TopLeft="196,170" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Add new Orders\Lookup Employee"
+          TopLeft="195,520" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Add new Orders\Lookup Sales Territory"
+          TopLeft="183,359" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Add new Orders\Add new Order"
+          TopLeft="408,724" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Add new Orders\Load the staging area"
+          TopLeft="105,725" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Add new Orders\Lookup Promotion"
+          TopLeft="191,264" />
         <EdgeLayout
           Id="Package\Add new Orders.Paths[OLE DB Source Output]"
           TopLeft="267.25,48">
@@ -2941,126 +2905,6 @@ where [refTable].[StoreAlternateKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add new Orders.Paths[Lookup Match Output2]"
-          TopLeft="278,401">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47"
-              Start="0,0"
-              End="0,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Add new Orders\Lookup Employee"
-          TopLeft="195,520" />
-        <EdgeLayout
-          Id="Package\Add new Orders.Paths[Lookup Match Output3]"
-          TopLeft="278.25,490">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add new Orders.Paths[Lookup Match Output4]"
-          TopLeft="277.25,562">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37"
-              Start="0,0"
-              End="0,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Add new Orders\Load the staging area"
-          TopLeft="105,725" />
-        <EdgeLayout
-          Id="Package\Add new Orders.Paths[Lookup Match Output5]"
-          TopLeft="252,641">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-54.5,84"
-              Start="0,0"
-              End="-54.5,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.125"
-                    Point2="0,34.125"
-                    Point3="-4,34.125" />
-                  <mssgle:LineSegment
-                    End="-50.5,34.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.5,34.125"
-                    Point2="-54.5,34.125"
-                    Point3="-54.5,38.125" />
-                  <mssgle:LineSegment
-                    End="-54.5,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-75.44138671875,39.125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Add new Orders\Add new Order"
-          TopLeft="408,724" />
         <EdgeLayout
           Id="Package\Add new Orders.Paths[Lookup No Match Output]"
           TopLeft="300,641">
@@ -3118,6 +2962,162 @@ where [refTable].[StoreAlternateKey] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,12.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Orders.Paths[Lookup Match Output5]"
+          TopLeft="252,641">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54.5,84"
+              Start="0,0"
+              End="-54.5,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.125"
+                    Point2="0,34.125"
+                    Point3="-4,34.125" />
+                  <mssgle:LineSegment
+                    End="-50.5,34.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.5,34.125"
+                    Point2="-54.5,34.125"
+                    Point3="-54.5,38.125" />
+                  <mssgle:LineSegment
+                    End="-54.5,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-75.44138671875,39.125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Orders.Paths[Lookup Match Output4]"
+          TopLeft="277.25,562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Orders.Paths[Lookup Match Output3]"
+          TopLeft="278.25,490">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Orders.Paths[Lookup Match Output2]"
+          TopLeft="278,401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Orders.Paths[Lookup Match Output1]"
+          TopLeft="276.5,306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add new Orders.Paths[Lookup Match Output]"
+          TopLeft="274.5,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
