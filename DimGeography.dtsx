@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimGeography"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{F7C29AE1-301A-4F35-A87C-4E30F7311B0A}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{CC0A315F-DD94-45D1-812E-82E57898195E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -149,12 +149,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[GeographyID]"
-                      cachedDataType="i4"
-                      cachedName="GeographyID"
-                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]" />
-                    <inputColumn
                       refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="30"
@@ -190,11 +184,17 @@
                       externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
                       lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[CountryRegionName]" />
                     <inputColumn
-                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[GeographyAlternateKey]"
                       cachedDataType="i4"
-                      cachedName="TerritoryID"
+                      cachedName="GeographyAlternateKey"
+                      externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyAlternateKey]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].Columns[SalesTerritoryKey]"
+                      cachedDataType="i4"
+                      cachedName="SalesTerritoryKey"
                       externalMetadataColumnId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]" />
+                      lineageId="Package\Add new Geography\Lookup SaleTerritory.Outputs[Lookup Match Output].Columns[SalesTerritoryKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -202,10 +202,6 @@
                       refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
                       dataType="i4"
                       name="GeographyKey" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
-                      dataType="i4"
-                      name="GeographyID" />
                     <externalMetadataColumn
                       refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       dataType="wstr"
@@ -235,6 +231,10 @@
                       refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
                       dataType="i4"
                       name="SalesTerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Geography\Add new Geography.Inputs[OLE DB Destination Input].ExternalColumns[GeographyAlternateKey]"
+                      dataType="i4"
+                      name="GeographyAlternateKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -325,15 +325,6 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[GeographyID]"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]"
-                      name="GeographyID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[City]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -384,21 +375,26 @@
                       name="CountryRegionName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyAlternateKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]"
-                      name="TerritoryID"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[GeographyAlternateKey]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyAlternateKey]"
+                      name="GeographyAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryAlternateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryAlternateKey]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryAlternateKey]"
+                      name="SalesTerritoryAlternateKey"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[GeographyID]"
-                      dataType="i4"
-                      name="GeographyID" />
                     <externalMetadataColumn
                       refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       dataType="wstr"
@@ -425,9 +421,13 @@
                       length="50"
                       name="CountryRegionName" />
                     <externalMetadataColumn
-                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[GeographyAlternateKey]"
                       dataType="i4"
-                      name="TerritoryID" />
+                      name="GeographyAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryAlternateKey]"
+                      dataType="i4"
+                      name="SalesTerritoryAlternateKey" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -436,10 +436,10 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[GeographyID]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[GeographyAlternateKey]"
                       dataType="i4"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[GeographyID]"
-                      name="GeographyID" />
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[GeographyAlternateKey]"
+                      name="GeographyAlternateKey" />
                     <outputColumn
                       refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[City]"
                       dataType="wstr"
@@ -471,10 +471,10 @@
                       lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[CountryRegionName]"
                       name="CountryRegionName" />
                     <outputColumn
-                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryAlternateKey]"
                       dataType="i4"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
-                      name="TerritoryID" />
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryAlternateKey]"
+                      name="SalesTerritoryAlternateKey" />
                     <outputColumn
                       refId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -565,12 +565,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[GeographyID]"
-                      cachedDataType="i4"
-                      cachedName="GeographyID"
-                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]" />
-                    <inputColumn
                       refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="30"
@@ -612,11 +606,17 @@
                       externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
                       lineageId="Package\Add new Geography\Lookup.Outputs[Lookup Match Output].Columns[GeographyKey]" />
                     <inputColumn
-                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[GeographyAlternateKey]"
                       cachedDataType="i4"
-                      cachedName="TerritoryID"
+                      cachedName="GeographyAlternateKey"
+                      externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyAlternateKey]"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].Columns[SalesTerritoryAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="SalesTerritoryAlternateKey"
                       externalMetadataColumnId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]" />
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryAlternateKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -624,10 +624,6 @@
                       refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
                       dataType="i4"
                       name="GeographyKey" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyID]"
-                      dataType="i4"
-                      name="GeographyID" />
                     <externalMetadataColumn
                       refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       dataType="wstr"
@@ -657,6 +653,10 @@
                       refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[SalesTerritoryKey]"
                       dataType="i4"
                       name="SalesTerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Geography\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[GeographyAlternateKey]"
+                      dataType="i4"
+                      name="GeographyAlternateKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -706,7 +706,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimGeography]) [refTable]
-where [refTable].[GeographyID] = ?</property>
+where [refTable].[GeographyAlternateKey] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -737,12 +737,12 @@ where [refTable].[GeographyID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GeographyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GeographyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyAlternateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionCode" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryRegionName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]};</property>
+                  name="ParameterMap">#{Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyAlternateKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -766,15 +766,15 @@ where [refTable].[GeographyID] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add new Geography\Lookup.Inputs[Lookup Input].Columns[GeographyID]"
+                      refId="Package\Add new Geography\Lookup.Inputs[Lookup Input].Columns[GeographyAlternateKey]"
                       cachedDataType="i4"
-                      cachedName="GeographyID"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyID]">
+                      cachedName="GeographyAlternateKey"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[GeographyAlternateKey]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">GeographyID</property>
+                          name="JoinToReferenceColumn">GeographyAlternateKey</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -863,7 +863,7 @@ where [refTable].[GeographyID] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimSalesTerritory]) [refTable]
-where [refTable].[SalesTerritoryID] = ?</property>
+where [refTable].[SalesTerritoryAlternateKey] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -894,12 +894,12 @@ where [refTable].[SalesTerritoryID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SalesTerritoryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryRegion" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryCountry" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryGroup" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SalesTerritoryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryAlternateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryRegion" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryCountry" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesTerritoryGroup" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]};</property>
+                  name="ParameterMap">#{Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryAlternateKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -923,15 +923,15 @@ where [refTable].[SalesTerritoryID] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add new Geography\Lookup SaleTerritory.Inputs[Lookup Input].Columns[TerritoryID]"
+                      refId="Package\Add new Geography\Lookup SaleTerritory.Inputs[Lookup Input].Columns[SalesTerritoryAlternateKey]"
                       cachedDataType="i4"
-                      cachedName="TerritoryID"
-                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[TerritoryID]">
+                      cachedName="SalesTerritoryAlternateKey"
+                      lineageId="Package\Add new Geography\Get row changes.Outputs[OLE DB Source Output].Columns[SalesTerritoryAlternateKey]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">SalesTerritoryID</property>
+                          name="JoinToReferenceColumn">SalesTerritoryAlternateKey</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1386,21 +1386,21 @@ where [refTable].[SalesTerritoryID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181,42"
-          Id="Package\Add new Geography\Lookup SaleTerritory"
-          TopLeft="507,208" />
-        <NodeLayout
           Size="179,42"
           Id="Package\Add new Geography\Add new Geography"
           TopLeft="612.999988883734,423.999993398786" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\Add new Geography\Lookup"
-          TopLeft="522.999991387129,294.999995499849" />
+          Size="181,42"
+          Id="Package\Add new Geography\Lookup SaleTerritory"
+          TopLeft="507,208" />
         <NodeLayout
           Size="185,42"
           Id="Package\Add new Geography\Load the staging area"
           TopLeft="371.999993562699,425.999993696809" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Add new Geography\Lookup"
+          TopLeft="522.999991387129,294.999995499849" />
         <NodeLayout
           Size="158,42"
           Id="Package\Add new Geography\Get row changes"
@@ -1527,38 +1527,10 @@ where [refTable].[SalesTerritoryID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new Geography\Lookup SaleTerritory">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimSalesTerritory]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add new Geography\Load the staging area">
+    design-time-name="Package\Add new Geography\Get row changes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1568,7 +1540,7 @@ where [refTable].[SalesTerritoryID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1578,7 +1550,30 @@ where [refTable].[SalesTerritoryID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Geography\Lookup SaleTerritory">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSalesTerritory]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1599,10 +1594,15 @@ where [refTable].[SalesTerritoryID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new Geography\Get row changes">
+    design-time-name="Package\Add new Geography\Load the staging area">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

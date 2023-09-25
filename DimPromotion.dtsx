@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimPromotion"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{DF8D9E04-8A6A-47FF-B9F5-880500A3410E}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{618EBA2A-AF33-4ED1-965D-0C084F844C8C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -149,12 +149,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[PromotionID]"
-                      cachedDataType="i4"
-                      cachedName="PromotionID"
-                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]" />
-                    <inputColumn
                       refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[PromotionName]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -205,6 +199,12 @@
                       cachedName="MaxQty"
                       externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[MaxQty]"
                       lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MaxQty]" />
+                    <inputColumn
+                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].Columns[PromotionAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="PromotionAlternateKey"
+                      externalMetadataColumnId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionAlternateKey]"
+                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionAlternateKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -212,10 +212,6 @@
                       refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
                       dataType="i4"
                       name="PromotionKey" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
-                      dataType="i4"
-                      name="PromotionID" />
                     <externalMetadataColumn
                       refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
                       dataType="wstr"
@@ -251,6 +247,10 @@
                       refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[MaxQty]"
                       dataType="i4"
                       name="MaxQty" />
+                    <externalMetadataColumn
+                      refId="Package\Add New Promotion\Add New Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionAlternateKey]"
+                      dataType="i4"
+                      name="PromotionAlternateKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -341,15 +341,6 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionID]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]"
-                      name="PromotionID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -424,18 +415,18 @@
                       lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[MaxQty]"
                       name="MaxQty"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionAlternateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionAlternateKey]"
+                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionAlternateKey]"
+                      name="PromotionAlternateKey"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
-                      dataType="bytes"
-                      length="8"
-                      name="rowversion" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionID]"
-                      dataType="i4"
-                      name="PromotionID" />
                     <externalMetadataColumn
                       refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionName]"
                       dataType="wstr"
@@ -471,6 +462,10 @@
                       refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[MaxQty]"
                       dataType="i4"
                       name="MaxQty" />
+                    <externalMetadataColumn
+                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].ExternalColumns[PromotionAlternateKey]"
+                      dataType="i4"
+                      name="PromotionAlternateKey" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -479,10 +474,10 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionID]"
+                      refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionAlternateKey]"
                       dataType="i4"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionID]"
-                      name="PromotionID" />
+                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionAlternateKey]"
+                      name="PromotionAlternateKey" />
                     <outputColumn
                       refId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Error Output].Columns[PromotionName]"
                       dataType="wstr"
@@ -616,12 +611,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionID]"
-                      cachedDataType="i4"
-                      cachedName="PromotionID"
-                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]" />
-                    <inputColumn
                       refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionName]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -678,6 +667,12 @@
                       cachedName="PromotionKey"
                       externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
                       lineageId="Package\Add New Promotion\Lookup.Outputs[Lookup Match Output].Columns[PromotionKey]" />
+                    <inputColumn
+                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].Columns[PromotionAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="PromotionAlternateKey"
+                      externalMetadataColumnId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionAlternateKey]"
+                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionAlternateKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -685,10 +680,6 @@
                       refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
                       dataType="i4"
                       name="PromotionKey" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
-                      dataType="i4"
-                      name="PromotionID" />
                     <externalMetadataColumn
                       refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
                       dataType="wstr"
@@ -724,6 +715,10 @@
                       refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[MaxQty]"
                       dataType="i4"
                       name="MaxQty" />
+                    <externalMetadataColumn
+                      refId="Package\Add New Promotion\Load the staging area.Inputs[OLE DB Destination Input].ExternalColumns[PromotionAlternateKey]"
+                      dataType="i4"
+                      name="PromotionAlternateKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -773,7 +768,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPromotion]) [refTable]
-where [refTable].[PromotionID] = ?</property>
+where [refTable].[PromotionAlternateKey] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -804,12 +799,12 @@ where [refTable].[PromotionID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PromotionKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DiscountPct" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionCategory" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MinQty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaxQty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PromotionKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionAlternateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionCategory" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DiscountPct" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MinQty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaxQty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]};</property>
+                  name="ParameterMap">#{Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionAlternateKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -833,15 +828,15 @@ where [refTable].[PromotionID] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add New Promotion\Lookup.Inputs[Lookup Input].Columns[PromotionID]"
+                      refId="Package\Add New Promotion\Lookup.Inputs[Lookup Input].Columns[PromotionAlternateKey]"
                       cachedDataType="i4"
-                      cachedName="PromotionID"
-                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionID]">
+                      cachedName="PromotionAlternateKey"
+                      lineageId="Package\Add New Promotion\Get row changes.Outputs[OLE DB Source Output].Columns[PromotionAlternateKey]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">PromotionID</property>
+                          name="JoinToReferenceColumn">PromotionAlternateKey</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1304,7 +1299,7 @@ where [refTable].[PromotionID] = ?</property>
         <NodeLayout
           Size="177,42"
           Id="Package\Add New Promotion\Add New Promotion"
-          TopLeft="745.999988883734,442.999993398786" />
+          TopLeft="705.999988883734,426.999993398786" />
         <EdgeLayout
           Id="Package\Add New Promotion.Paths[OLE DB Source Output]"
           TopLeft="650.99999192357,224.999997228384">
@@ -1329,49 +1324,49 @@ where [refTable].[PromotionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Add New Promotion.Paths[Lookup No Match Output]"
-          TopLeft="674.666658053796,316.999995499849">
+          TopLeft="652.666658053796,316.999995499849">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="159.833330829938,125.999997898937"
+              EndConnector="141.833330829938,109.999997898937"
               Start="0,0"
-              End="159.833330829938,118.499997898937">
+              End="141.833330829938,102.499997898937">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.2307683764909" />
+                    End="0,37.7252738709964" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.2307683764909"
-                    Point2="0,51.2307683764909"
-                    Point3="4,51.2307683764909" />
+                    Point1="0,37.7252738709964"
+                    Point2="0,41.7252738709964"
+                    Point3="4,41.7252738709964" />
                   <mssgle:LineSegment
-                    End="155.833330829938,51.2307683764909" />
+                    End="137.833330829938,41.7252738709964" />
                   <mssgle:CubicBezierSegment
-                    Point1="155.833330829938,51.2307683764909"
-                    Point2="159.833330829938,51.2307683764909"
-                    Point3="159.833330829938,55.2307683764909" />
+                    Point1="137.833330829938,41.7252738709964"
+                    Point2="141.833330829938,41.7252738709964"
+                    Point3="141.833330829938,45.7252738709964" />
                   <mssgle:LineSegment
-                    End="159.833330829938,118.499997898937" />
+                    End="141.833330829938,102.499997898937" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="24.1102786962192,56.2307683764909,111.6127734375,11.609375"
+              BoundingBox="15.1102786962192,46.7252738709964,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Add New Promotion.Paths[Lookup Match Output]"
-          TopLeft="629.333324720462,316.999995499849">
+          TopLeft="652.333324720462,316.999995499849">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-106.833331157763,105.99999819696"
+              EndConnector="-129.833331157763,105.99999819696"
               Start="0,0"
-              End="-106.833331157763,98.49999819696">
+              End="-129.833331157763,98.49999819696">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1382,20 +1377,20 @@ where [refTable].[PromotionID] = ?</property>
                     Point2="0,43.0989003657969"
                     Point3="-4,43.0989003657969" />
                   <mssgle:LineSegment
-                    End="-102.833331157763,43.0989003657969" />
+                    End="-125.833331157763,43.0989003657969" />
                   <mssgle:CubicBezierSegment
-                    Point1="-102.833331157763,43.0989003657969"
-                    Point2="-106.833331157763,43.0989003657969"
-                    Point3="-106.833331157763,47.0989003657969" />
+                    Point1="-125.833331157763,43.0989003657969"
+                    Point2="-129.833331157763,43.0989003657969"
+                    Point3="-129.833331157763,47.0989003657969" />
                   <mssgle:LineSegment
-                    End="-106.833331157763,98.49999819696" />
+                    End="-129.833331157763,98.49999819696" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-101.608052297632,48.0989003657969,96.3827734375,11.609375"
+              BoundingBox="-113.108052297632,48.0989003657969,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1408,7 +1403,7 @@ where [refTable].[PromotionID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
